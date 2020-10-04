@@ -1,0 +1,9 @@
+D:\_data\Private\Middlink\src\Middlink\bin\Debug\netstandard2.0\Middlink.deps.json
+D:\_data\Private\Middlink\src\Middlink\bin\Debug\netstandard2.0\Middlink.dll
+D:\_data\Private\Middlink\src\Middlink\bin\Debug\netstandard2.0\Middlink.pdb
+D:\_data\Private\Middlink\src\Middlink\obj\Debug\netstandard2.0\Middlink.csprojAssemblyReference.cache
+D:\_data\Private\Middlink\src\Middlink\obj\Debug\netstandard2.0\Middlink.AssemblyInfoInputs.cache
+D:\_data\Private\Middlink\src\Middlink\obj\Debug\netstandard2.0\Middlink.AssemblyInfo.cs
+D:\_data\Private\Middlink\src\Middlink\obj\Debug\netstandard2.0\Middlink.csproj.CoreCompileInputs.cache
+D:\_data\Private\Middlink\src\Middlink\obj\Debug\netstandard2.0\Middlink.dll
+D:\_data\Private\Middlink\src\Middlink\obj\Debug\netstandard2.0\Middlink.pdb
