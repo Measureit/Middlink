@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  PctML:
+  PublishMiddlink:
     runs-on: windows-latest
     env:
       working-directory: ./src/Middlink
