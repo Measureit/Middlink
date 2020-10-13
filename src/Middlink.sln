@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30420.98
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink", "Middlink\Middlink.csproj", "{2BF0C987-EEDF-47A1-AAA1-79D6E9625C8F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.Messages", "Middlink.Messages\Middlink.Messages.csproj", "{8C633230-C334-4D7B-B570-867E87363C30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink", "Middlink\Middlink.csproj", "{2BF0C987-EEDF-47A1-AAA1-79D6E9625C8F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MVC", "Middlink.MVC\Middlink.MVC.csproj", "{A53BAD5B-C196-44CB-9834-E00DF305FFD0}"
 EndProject
