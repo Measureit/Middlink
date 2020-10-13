@@ -1,15 +1,28 @@
-<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageId>Middlink</PackageId>
-		<Version>1.0.0.0</Version>
-		<Authors>Jarosław Kurdzieko</Authors>
-		<Owners>Measureit</Owners>
-		<ProjectUrl>http://measureit.pl</ProjectUrl>
-		<Copyright>Copyright (c) Measureit</Copyright>
-		<Product>Middlink</Product>
-		<Description>Middlewares interface library.</Description>
-		<PackageTags>Middlink</PackageTags>
-	</PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>netstandard2.0</TargetFramework>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<PackageId>Middlink</PackageId>
+	<Version>1.0.0.0</Version>
+	<Authors>Jarosław Kurdzieko</Authors>
+	<Owners>Measureit</Owners>
+	<ProjectUrl>http://measureit.pl</ProjectUrl>
+	<Copyright>Copyright (c) Measureit</Copyright>
+	<Product>Middlink</Product>
+	<Description>Middlewares interface library.</Description>
+	<PackageTags>Middlink</PackageTags>
+	<LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0-rc.1.20451.14" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0-rc.1.20451.14" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0-rc.1.20451.14" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Middlink.Messages\Middlink.Messages.csproj" />
+  </ItemGroup>
 </Project>
