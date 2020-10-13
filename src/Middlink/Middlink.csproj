@@ -12,6 +12,7 @@
 	<Description>Middlewares interface library.</Description>
 	<PackageTags>Middlink</PackageTags>
 	<LangVersion>9.0</LangVersion>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />

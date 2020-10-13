@@ -13,6 +13,7 @@
 	<Description>Middlewares MVC library.</Description>
 	<PackageTags>Middlink;Middlink.MVC</PackageTags>
 	<LangVersion>9.0</LangVersion>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

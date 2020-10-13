@@ -12,9 +12,9 @@
 	<Product>Middlink</Product>
 	<Description>Middlewares Messages library.</Description>
 	<PackageTags>Middlink;Middlink.Messages</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<LangVersion>9.0</LangVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="5.0.0-rc.1.20451.14" />
   </ItemGroup>
