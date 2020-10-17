@@ -1,10 +1,10 @@
-﻿using Middlink.Storage.Entities;
+﻿
 using System;
 using System.Collections.Generic;
 
 namespace Middlink.EventSourcing
 {
-    public class EventDescriptor<T> : IIdentifiable
+    public class EventDescriptor<T>
     {
         public Guid Id { get; set; }
         public List<T> Events { get; set; }
