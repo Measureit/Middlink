@@ -1,0 +1,343 @@
+﻿<?xml version="1.0"?>
+<project name="UpgradeMiddlink" default="replace">
+  <property name="version" value="1.0.0.1" />
+  <property name="version.suffix" value="preview3" />
+
+
+  
+  <!-- ********************** DO NOT CHANGE ANYTHING BELOW **************************************** -->
+  <!-- ****************** (unless you know what you are doing) ************************************ -->
+  <property name="version" value = "${majorVersion}.${patchNumber}" />
+  <property name="informationalVersion" value="${majorVersion}.${patchNumber}" />
+  <property name="oldSdkVersion" value="${majorVersion}.${patchNumber}" />
+  <property name="newSdkVersion" value="${sdk.version}" />
+  <property name="endpointExtensionsVersion" value="${endpoint.extensions.version}" />
+  <if test="${version.suffix!=''}">
+    <property name="informationalVersion" value="${majorVersion}.${patchNumber}-${version.suffix}" />
+  </if>
+  <if test="${sdk.suffix!=''}">
+    <property name="oldSdkVersion" value="${majorVersion}.${patchNumber}-${sdk.suffix}" />
+    <property name="newSdkVersion" value="${sdk.version}-${sdk.suffix}" />
+  </if>
+  <if test="${endpoint.extensions.suffix!=''}">
+    <property name="endpointExtensionsVersion" value="${endpoint.extensions.version}-${endpoint.extensions.suffix}" />
+  </if>
+  	
+  
+  <property name="procontel.dir" value="." /> <!-- use current dir as ProconTEL repository directory -->
+  <property name="procontel.setup.dir" value="${procontel.dir}\setup" />
+  
+  <property name="vsix.dir" value="${procontel.dir}\vsix" />
+
+  <target name="update-assembly-info-version">
+    <property name="procontel.source.dir" value="${procontel.dir}\source" />
+    
+    <foreach item="File" property="assinfo.file">
+      <in>
+        <items>        
+          <!-- <include name="${procontel.source.dir}\**\AssemblyInfo.cs" /> -->
+          <include name="${procontel.setup.dir}\**\AssemblyInfo.cs" />
+          <include name="${vsix.dir}\**\AssemblyInfo.cs" />
+          <exclude name="${procontel.source.dir}\Sdk\**\AssemblyInfo.cs" />
+          <exclude name="${vsix.dir}\source\ProconTEL.VS.ExtensionPackage\Templates\Projects\ProconTEL\Sample\AssemblyInfo.cs" />
+          <exclude name="${vsix.dir}\source\ProconTEL.VS.Templates.Projects.Endpoint\AssemblyInfo.cs" />
+          <exclude name="${vsix.dir}\source\ProconTEL.VS.Templates.Projects.LogMessages\AssemblyInfo.cs" />
+        </items>
+      </in>
+      <do>
+        <!-- set the version number -->
+        <loadfile file="${assinfo.file}" property="assinfo.content" />
+        <regex input="${assinfo.content}" pattern="(?'BEFORE'[\w\s\W]*)\[assembly: AssemblyVersion.*\](?'MIDDLE'[\w\s\W]*)\[assembly: AssemblyFileVersion.*\](?'AFTER'[\w\s\W]*)" />
+        <echo file="${assinfo.file}" encoding="windows-1250" append="false"
+          message="${BEFORE}[assembly: AssemblyVersion(&quot;${version}&quot;)]${MIDDLE}[assembly: AssemblyFileVersion(&quot;${version}&quot;)]${AFTER}" />
+          
+        <!-- set the copyright information -->
+        <loadfile file="${assinfo.file}" property="assinfo.content" />
+        <regex input="${assinfo.content}" pattern="(?'BEFORE'[\w\s\W]*)\[assembly: AssemblyCopyright.*\](?'AFTER'[\w\s\W]*)" />
+        <echo file="${assinfo.file}" append="false"
+          message="${BEFORE}[assembly: AssemblyCopyright(&quot;${copyright}&quot;)]${AFTER}" />
+
+      </do>
+    </foreach>
+  </target>
+
+  <target name="update-shared-assembly-info-version">
+    <property name="procontel.source.dir" value="${procontel.dir}\source" />
+    
+    <foreach item="File" property="assinfo.file">
+      <in>
+        <items>
+          <include name="${procontel.source.dir}\SharedAssemblyInfo.cs" />         
+        </items>
+      </in>
+      <do>
+		    <!-- set the informational version number -->
+        <loadfile file="${assinfo.file}" property="assinfo.content" />
+        <regex input="${assinfo.content}" pattern="(?'BEFORE'[\w\s\W]*)\[assembly: AssemblyInformationalVersion.*\](?'AFTER'[\w\s\W]*)" />
+        <echo file="${assinfo.file}" encoding="windows-1250" append="false"
+          message="${BEFORE}[assembly: AssemblyInformationalVersion(&quot;${informationalVersion}&quot;)]${AFTER}" />  
+		  
+		    <!-- set the version number -->
+        <loadfile file="${assinfo.file}" property="assinfo.content" />
+        <regex input="${assinfo.content}" pattern="(?'BEFORE'[\w\s\W]*)\[assembly: AssemblyVersion.*\](?'MIDDLE'[\w\s\W]*)\[assembly: AssemblyFileVersion.*\](?'AFTER'[\w\s\W]*)" />
+        <echo file="${assinfo.file}" encoding="windows-1250" append="false"
+          message="${BEFORE}[assembly: AssemblyVersion(&quot;${version}&quot;)]${MIDDLE}[assembly: AssemblyFileVersion(&quot;${version}&quot;)]${AFTER}" />
+          
+        <!-- set the copyright information -->
+        <loadfile file="${assinfo.file}" property="assinfo.content" />
+        <regex input="${assinfo.content}" pattern="(?'BEFORE'[\w\s\W]*)\[assembly: AssemblyCopyright.*\](?'AFTER'[\w\s\W]*)" />
+        <echo file="${assinfo.file}" append="false"
+          message="${BEFORE}[assembly: AssemblyCopyright(&quot;${copyright}&quot;)]${AFTER}" />
+      </do>
+    </foreach>
+  </target>
+  
+  <target name="update-nuspec-version">
+    <property name="procontel.source.dir" value="${procontel.dir}\source" />
+    
+    <foreach item="File" property="nuspec.file">
+      <in>
+        <items>
+          <include name="${procontel.source.dir}\**\ProconTel.Logging.nuspec" />   
+          <include name="${procontel.source.dir}\**\ProconTel.CommunicationCenter.Utilities.nuspec" /> 
+          <include name="${procontel.source.dir}\**\ProconTel.CommunicationCenter.Kernel.nuspec" /> 
+          <include name="${procontel.source.dir}\**\ProconTel.CommunicationCenter.Administration.Api.nuspec" /> 		  
+        </items>
+      </in>
+      <do>
+        <xmlpoke file="${nuspec.file}" xpath="/x:package/x:metadata/x:version" value="${oldSdkVersion}">
+          <namespaces>
+            <namespace prefix="x" uri="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd" />
+          </namespaces>
+        </xmlpoke>
+      </do>
+    </foreach>
+  </target>
+  
+  <target name="update-sdk-version">
+    <property name="procontel.source.dir" value="${procontel.dir}\source" />
+    
+    <foreach item="File" property="csproj.file">
+      <in>
+        <items>
+          <include name="${procontel.source.dir}\Sdk\**\*.csproj" />   
+		  <exclude name="${procontel.source.dir}\Sdk\ProconTel.Sdk.Lab\**\*.csproj" /> 
+        </items>
+      </in>
+      <do>
+        <xmlpoke file="${csproj.file}" xpath="/Project/PropertyGroup/Version" value="${newSdkVersion}" />
+      </do>
+    </foreach>
+  </target>
+  
+    <target name="update-sdk-lab-version">
+    <property name="procontel.source.dir" value="${procontel.dir}\source" />
+    
+    <foreach item="File" property="csproj.file">
+      <in>
+        <items> 
+		  <include name="${procontel.source.dir}\Sdk\ProconTel.Sdk.Lab\**\*.csproj" /> 
+        </items>
+      </in>
+      <do>
+        <xmlpoke file="${csproj.file}" xpath="/Project/PropertyGroup/Version" value="${oldSdkVersion}" />
+      </do>
+    </foreach>
+  </target>
+  
+  <target name="update-endpoint-extensions-version">
+    <property name="procontel.source.dir" value="${procontel.dir}\source" />
+    
+    <foreach item="File" property="csproj.file">
+      <in>
+        <items>
+          <include name="${procontel.source.dir}\Extensions\**\*.csproj" />   
+        </items>
+      </in>
+      <do>
+        <xmlpoke file="${csproj.file}" xpath="/Project/PropertyGroup/Version" value="${endpointExtensionsVersion}" />
+      </do>
+    </foreach>
+  </target>
+  
+  <target name="replace-vsix-manifest">
+    <property name="vsix.manifest" value="${vsix.dir}\source\ProconTEL.VS.ExtensionPackage\source.extension.vsixmanifest" />
+    
+    <echo message="Updating file ${vsix.manifest}" />
+    
+    <xmlpoke file="${vsix.manifest}" xpath="//*[local-name()='Identity']/@Version" value="${version}" />
+    <xmlpoke file="${vsix.manifest}" xpath="//*[local-name()='DisplayName']" value="ProconTEL.VSExtension v.${version}" />
+    <xmlpoke file="${vsix.manifest}" xpath="//*[local-name()='Identity']/@Id" value="${vsix.guid}" />
+  </target>
+
+  <target name="replace-msglog-item-vstemplate">
+    <property name="msglog-item-vstemplate" value="${vsix.dir}\source\ProconTEL.VS.Templates.Items.LogMessages\ProconTEL.VS.Templates.Items.LogMessages.vstemplate" />
+    
+    <echo message="Updating file ${msglog-item-vstemplate}" />
+    
+    <xmlpoke file="${msglog-item-vstemplate}" xpath="/x:VSTemplate/x:TemplateData/x:Name" value="ProconTEL Log Messages Project Item v.${version}">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/vstemplate/2005" />
+      </namespaces>
+    </xmlpoke>
+    
+    <xmlpoke file="${msglog-item-vstemplate}" xpath="/x:VSTemplate/x:WizardExtension/x:Assembly" 
+      value="ProconTEL.VS.Wizards.LogMessagesItem, Version=${version}, Culture=neutral, PublicKeyToken=18278d6583f61101">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/vstemplate/2005" />
+      </namespaces>
+    </xmlpoke>
+  </target>
+  
+  <target name="replace-msglog-proj-vstemplate">
+    <property name="msglog-proj-vstemplate" value="${vsix.dir}\source\ProconTEL.VS.Templates.Projects.LogMessages\ProjectTemplate1.vstemplate" />
+    
+    <echo message="Updating file ${msglog-proj-vstemplate}" />
+    
+    <xmlpoke file="${msglog-proj-vstemplate}" xpath="/x:VSTemplate/x:TemplateData/x:Name" value="ProconTEL Log Messages Project v.${version}">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/vstemplate/2005" />
+      </namespaces>
+    </xmlpoke>
+    
+    <xmlpoke file="${msglog-proj-vstemplate}" xpath="/x:VSTemplate/x:WizardExtension/x:Assembly" 
+      value="ProconTEL.VS.Wizards.LogMessagesProject, Version=${version}, Culture=neutral, PublicKeyToken=f587de8abb0b66b3">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/vstemplate/2005" />
+      </namespaces>
+    </xmlpoke>
+    
+    <property name="msglog-proj-csproj" value="${vsix.dir}\source\ProconTEL.VS.Templates.Projects.LogMessages\ProjectTemplate.csproj" />
+    <xmlpoke file="${msglog-proj-csproj}" xpath="/x:Project/x:UsingTask/@AssemblyName" 
+      value="ProconTEL.VS.Tasks.LogMessages.Generator, Version=${version}, Culture=neutral, PublicKeyToken=dec54c5d27a2f653">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    
+    <xmlpoke file="${msglog-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[1]/@Include"
+      value="ProconTel.Logging, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${msglog-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[2]/@Include"
+      value="ProconTel.CommunicationCenter.Kernel, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${msglog-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[3]/@Include"
+      value="ProconTel.CommunicationCenter.Administration, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${msglog-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[4]/@Include"
+      value="ProconTel.CommunicationCenter.Administration.Api, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${msglog-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[5]/@Include"
+      value="ProconTel.Security, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+  </target>
+  
+  <target name="replace-endpoint-proj-vstemplate">
+    <property name="endpoint-proj-vstemplate" value="${vsix.dir}\source\ProconTEL.VS.Templates.Projects.Endpoint\ProconTEL.VS.Templates.Projects.Endpoint.vstemplate" />
+    
+    <echo message="Updating file ${endpoint-proj-vstemplate}" />
+    
+    <xmlpoke file="${endpoint-proj-vstemplate}" xpath="/x:VSTemplate/x:TemplateData/x:Name" value="ProconTEL Endpoint Project v.${version}">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/vstemplate/2005" />
+      </namespaces>
+    </xmlpoke>
+    
+    <xmlpoke file="${endpoint-proj-vstemplate}" xpath="/x:VSTemplate/x:WizardExtension/x:Assembly" 
+      value="ProconTEL.VS.Wizards.Endpoint, Version=${version}, Culture=neutral, PublicKeyToken=3805eeb6b381bac2">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/vstemplate/2005" />
+      </namespaces>
+    </xmlpoke>
+    
+    <property name="endpoint-proj-csproj" value="${vsix.dir}\source\ProconTEL.VS.Templates.Projects.Endpoint\ProconTel.EndpointProject.Template.csproj" />
+    <xmlpoke file="${endpoint-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[1]/@Include"
+      value="ProconTel.CommunicationCenter.Kernel, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${endpoint-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[2]/@Include"
+      value="ProconTel.CommunicationCenter.UserManager, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${endpoint-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[3]/@Include"
+      value="ProconTel.Logging, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+    <xmlpoke file="${endpoint-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[4]/@Include"
+      value="ProconTel.Security, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+		<xmlpoke file="${endpoint-proj-csproj}" xpath="/x:Project/x:ItemGroup[1]/x:Reference[5]/@Include"
+      value="ProconTel.Streaming, Version=${version}, Culture=neutral, PublicKeyToken=43b2a5dae6e35ee1">
+      <namespaces>
+        <namespace prefix="x" uri="http://schemas.microsoft.com/developer/msbuild/2003" />
+      </namespaces>
+    </xmlpoke>
+  </target>
+  
+  <target name="wix-guid-update">
+	<exec program="${procontel.dir}\scripts\WixGuidUpdater.exe">
+	  <arg value="${procontel.setup.dir}\Setup" />
+	</exec>
+  </target>
+  
+  <target name="setup-config-update">
+    <property name="setup.config.file" value="${procontel.setup.dir}\Setup\Config.wxi" />
+    <property name="setup.vsix.file" value="${procontel.setup.dir}\Setup\Fragments\VSIXPackage.wxs" />
+    
+    <!-- set the version number -->
+    <loadfile file="${setup.config.file}" property="setup.config.content" />
+    <regex input="${setup.config.content}" pattern="(?'BEFORE'[\w\s\W]*)define ProductVersion = &quot;.*&quot;(?'AFTER'[\w\s\W]*)" />
+    <echo file="${setup.config.file}" encoding="utf-8" append="false" message="${BEFORE}define ProductVersion = &quot;${version}&quot;${AFTER}" />
+    
+	  <!-- set the installation number -->
+    <loadfile file="${setup.config.file}" property="setup.config.content" />
+    <regex input="${setup.config.content}" pattern="(?'BEFORE'[\w\s\W]*)define MajorVersion = &quot;.*&quot;(?'AFTER'[\w\s\W]*)" />
+    <echo file="${setup.config.file}" encoding="utf-8" append="false" message="${BEFORE}define MajorVersion = &quot;${majorVersion}&quot;${AFTER}" />
+	
+    <!-- set the full version information -->
+    <loadfile file="${setup.config.file}" property="setup.config.content" />
+    <regex input="${setup.config.content}" pattern="(?'BEFORE'[\w\s\W]*)define FullVersion = &quot;.*&quot;(?'AFTER'[\w\s\W]*)" />
+    <echo file="${setup.config.file}" encoding="utf-8" append="false" message="${BEFORE}define FullVersion = &quot;${full.version}&quot;${AFTER}" />
+    
+    <!-- set the upgrade code -->
+    <loadfile file="${setup.config.file}" property="setup.config.content" />
+    <regex input="${setup.config.content}" pattern="(?'BEFORE'[\w\s\W]*)define UpgradeCode = &quot;.*&quot;(?'AFTER'[\w\s\W]*)" />
+    <echo file="${setup.config.file}" encoding="utf-8" append="false" message="${BEFORE}define UpgradeCode = &quot;${upgrade.code}&quot;${AFTER}" />
+    
+    <!-- replace the VSIX GUID in setup config file -->
+    <xmlpoke file="${setup.vsix.file}" xpath="//VSExtension:VsixPackage/@PackageId" value="${vsix.guid}">
+      <namespaces>
+        <namespace prefix="VSExtension" uri="http://schemas.microsoft.com/wix/VSExtension" />
+        <namespace prefix="x" uri="http://schemas.microsoft.com/wix/2006/wi" />
+      </namespaces>
+    </xmlpoke>
+  </target>
+  
+  <target name="replace" depends="wix-guid-update, setup-config-update, replace-msglog-item-vstemplate, replace-msglog-proj-vstemplate, replace-endpoint-proj-vstemplate, replace-vsix-manifest, update-assembly-info-version, update-nuspec-version, update-sdk-version, update-shared-assembly-info-version, update-endpoint-extensions-version,
+  update-sdk-lab-version" />
+  
+ </project>
