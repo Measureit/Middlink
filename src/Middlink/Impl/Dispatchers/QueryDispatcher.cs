@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Middlink.Dispatchers;
 using Middlink.Handlers;
-using Middlink.Queries;
+using Middlink.Messages.Queries;
+using System.Threading.Tasks;
 
 namespace Middlink.Impl.Dispatchers
 {

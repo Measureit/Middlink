@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.Json.Serialization;
 
-namespace Middlink.Queries
+namespace Middlink.Messages.Queries
 {
     public class PagedResult<T> : PagedResultBase
     {

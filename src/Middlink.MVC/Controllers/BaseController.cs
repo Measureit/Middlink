@@ -3,7 +3,7 @@ using Middlink.Dispatchers;
 using Middlink.Messages;
 using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
-using Middlink.Queries;
+using Middlink.Messages.Queries;
 using Middlink.Services;
 using System;
 using System.Linq;

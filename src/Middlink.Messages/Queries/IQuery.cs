@@ -1,6 +1,6 @@
 ﻿using Middlink.Messages;
 
-namespace Middlink.Queries
+namespace Middlink.Messages.Queries
 {
     public interface IQuery : IMessage
     {

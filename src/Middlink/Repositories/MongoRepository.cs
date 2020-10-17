@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Middlink.Messages.Entities;
+using Middlink.Messages.Queries;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Middlink.Entities;
-using Middlink.Messages.Entities;
-using Middlink.Queries;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 
 
 namespace Middlink.Repositories

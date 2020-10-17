@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Middlink.Queries
+namespace Middlink.Messages.Queries
 {
     public abstract class PagedResultBase
     {
