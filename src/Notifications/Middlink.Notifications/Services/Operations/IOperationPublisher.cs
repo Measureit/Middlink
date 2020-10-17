@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Middlink.Operations.Services
+namespace Middlink.Notifications.Services.Operations
 {
     public interface IOperationPublisher
     {

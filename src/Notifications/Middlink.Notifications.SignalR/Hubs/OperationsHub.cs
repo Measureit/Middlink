@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using Middlink.MVC.Extensions;
-using Middlink.MVC.Hubs.Broadcasters;
+using Middlink.Notifications.Hubs.Broadcasters;
+using Middlink.Notifications.SignalR.Extensions;
 using System.Threading.Tasks;
 
-namespace Middlink.MVC.Hubs
+namespace Middlink.Notifications.SignalR.Hubs
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class OperationsHub : Hub<IOperationBroadcaster>

@@ -1,7 +1,7 @@
 ﻿using Middlink.Messages;
 using System.Threading.Tasks;
 
-namespace Middlink.Operations.Hubs.Broadcasters
+namespace Middlink.Notifications.Hubs.Broadcasters
 {
     public interface IOperationBroadcaster
     {

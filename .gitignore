@@ -28,7 +28,7 @@ bld/
 vsix/package
 
 # Visual Studio 2015/2017 cache/options directory
-/.vs
+.vs/
 
 # Visual Studio Code directory
 .vscode/

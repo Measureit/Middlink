@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using Middlink.Messages;
-using Middlink.Messages.Operations;
-using Middlink.MVC.Extensions;
-using Middlink.MVC.Hubs;
+using Middlink.Notifications.Hubs.Broadcasters;
+using Middlink.Notifications.Operations;
+using Middlink.Notifications.Services.Operations;
+using Middlink.Notifications.SignalR.Extensions;
+using Middlink.Notifications.SignalR.Hubs;
 using System.Threading.Tasks;
 
-namespace Middlink.MVC.Services.Operations
+namespace Middlink.Notifications.SignalR.Services.Operations
 {
     public class OperationPublisher : IOperationPublisher
     {

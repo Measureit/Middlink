@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Middlink.Operations</PackageId>
+    <PackageId>Middlink.Notifications</PackageId>
     <Version>1.0.14.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
-    <Product>Middlink.Operations</Product>
-    <Description>Middlink Operations.</Description>
-    <PackageTags>Middlink;Middlink.Operations</PackageTags>
+    <Product>Middlink.Notifications</Product>
+    <Description>Middlink Notifications.</Description>
+    <PackageTags>Middlink;Middlink.Notifications</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
@@ -21,6 +21,10 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
     <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\Events\" />
   </ItemGroup>
 </Project>

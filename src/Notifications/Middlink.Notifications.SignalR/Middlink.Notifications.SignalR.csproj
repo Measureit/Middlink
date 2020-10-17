@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Middlink.Notifications.SignalR</PackageId>
+    <Version>1.0.14.0</Version>
+    <Authors>Measureit</Authors>
+    <Owners>Measureit</Owners>
+    <ProjectUrl>http://measureit.pl</ProjectUrl>
+    <Copyright>Copyright (c) Measureit</Copyright>
+    <Product>Middlink.Notifications.SignalR</Product>
+    <Description>Middlink Notifications implemented by SignalR.</Description>
+    <PackageTags>Middlink;Middlink.Notifications.SignalR</PackageTags>
+    <LangVersion>9.0</LangVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>Git</RepositoryType>
+    <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0-rc.2.20475.17" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Middlink.Notifications\Middlink.Notifications.csproj" />
+  </ItemGroup>
+
+</Project>

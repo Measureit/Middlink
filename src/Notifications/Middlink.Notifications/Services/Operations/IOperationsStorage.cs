@@ -1,9 +1,9 @@
-﻿using Middlink.Messages.Operations;
-using Middlink.Operations.Dto;
+﻿using Middlink.Notifications.Dto;
+using Middlink.Notifications.Operations;
 using System;
 using System.Threading.Tasks;
 
-namespace Middlink.Services
+namespace Middlink.Notifications.Services.Operations
 {
     public interface IOperationsStorage
     {

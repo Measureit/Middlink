@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Middlink.Operations.Dto
+namespace Middlink.Notifications.Dto
 {
 
     public class OperationDto
