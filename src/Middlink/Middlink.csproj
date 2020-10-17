@@ -12,6 +12,10 @@
 	<Description>Middlewares interface library.</Description>
 	<PackageTags>Middlink</PackageTags>
 	<LangVersion>9.0</LangVersion>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<RepositoryType>Git</RepositoryType>
+	<PackageReleaseNotes>Release notes:</PackageReleaseNotes>
+	<RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />

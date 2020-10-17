@@ -13,6 +13,10 @@
 	<Description>Middlewares MVC library.</Description>
 	<PackageTags>Middlink;Middlink.MVC</PackageTags>
 	<LangVersion>9.0</LangVersion>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<RepositoryType>Git</RepositoryType>
+	<PackageReleaseNotes>Release notes:</PackageReleaseNotes>
+	<RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

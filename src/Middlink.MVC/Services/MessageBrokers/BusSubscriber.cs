@@ -32,7 +32,7 @@ namespace Middlink.MVC.Services.MessageBrokers
         }
 
         public IBusSubscriber SubscribeCommand<TCommand>(string @namespace = null, string queueName = null,
-            Func<TCommand, InfrastructureException, IRejectedEvent> onError = null)
+            Func<TCommand, MiddlinkException, IRejectedEvent> onError = null)
             where TCommand : ICommand
         {
             _busClient.SubscribeAsync<TCommand>((command, correlationContext) =>
@@ -49,7 +49,7 @@ namespace Middlink.MVC.Services.MessageBrokers
         }
 
         public IBusSubscriber SubscribeEvent<TEvent>(string @namespace = null, string queueName = null,
-            Func<TEvent, InfrastructureException, IRejectedEvent> onError = null)
+            Func<TEvent, MiddlinkException, IRejectedEvent> onError = null)
             where TEvent : IDomainEvent
         {
 
@@ -70,7 +70,7 @@ namespace Middlink.MVC.Services.MessageBrokers
         //// It does not interfere with the routing keys and wildcards (see TryHandleWithRequeuingAsync() below).
         private Task TryHandleAsync<TMessage>(TMessage message,
             ICorrelationContext messageContext,
-            Func<Task> handle, Func<TMessage, InfrastructureException, IRejectedEvent> onError = null)
+            Func<Task> handle, Func<TMessage, MiddlinkException, IRejectedEvent> onError = null)
         {
             var currentRetry = 0;
             var retryPolicy = Policy
@@ -99,7 +99,7 @@ namespace Middlink.MVC.Services.MessageBrokers
                 {
                     currentRetry++;
                     _logger.LogError(exception, exception.Message);
-                    if (exception is InfrastructureException demandException && onError != null)
+                    if (exception is MiddlinkException demandException && onError != null)
                     {
                         var rejectedEvent = onError(message, demandException);
                         await _busClient.PublishAsync(rejectedEvent, messageContext);
