@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Middlink.Messages.Entities
+namespace Middlink.Storage.Entities
 {
     public interface IIdentifiable
     {

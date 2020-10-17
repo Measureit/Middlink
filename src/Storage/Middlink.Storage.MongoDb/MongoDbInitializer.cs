@@ -3,14 +3,12 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Middlink.Repositories
+namespace Middlink.Storage.MongoDb
 {
-    public class MongoDbInitializer : IMongoDbInitializer
+    public class MongoDbInitializer : IInitializer
     {
         private static bool _initialized;
         private readonly bool _seed;

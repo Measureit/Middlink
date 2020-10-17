@@ -1,11 +1,11 @@
-﻿using Middlink.Messages.Entities;
-using Middlink.Messages.Queries;
+﻿using Middlink.Messages.Queries;
+using Middlink.Storage.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Middlink.Repositories
+namespace Middlink.Storage
 {
     public interface IRepository<TEntity> where TEntity : IIdentifiable
     {

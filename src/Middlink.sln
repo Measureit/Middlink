@@ -9,13 +9,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink", "Middlink\Middli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MVC", "Middlink.MVC\Middlink.MVC.csproj", "{A53BAD5B-C196-44CB-9834-E00DF305FFD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.EventSourcing.MongoDb", "EventSourcing\Middlink.EventSourcing.MongoDb\Middlink.EventSourcing.MongoDb.csproj", "{C5531BEE-E066-4ED1-B1EA-165CF8C6B3DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.EventSourcing.MongoDb", "EventSourcing\Middlink.EventSourcing.MongoDb\Middlink.EventSourcing.MongoDb.csproj", "{C5531BEE-E066-4ED1-B1EA-165CF8C6B3DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventSourcing", "EventSourcing", "{3EBF52C3-683E-4692-AC8D-6D8A78468D0E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.EventSourcing", "EventSourcing\Middlink.EventSourcing\Middlink.EventSourcing.csproj", "{41B6AE43-2428-430B-ACDB-06189B933A60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.EventSourcing.MongoDb.Autofac", "EventSourcing\Middlink.EventSourcing.MongoDb.Autofac\Middlink.EventSourcing.MongoDb.Autofac.csproj", "{89EACB46-B1A5-4EE3-A295-FF0C3B244B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.EventSourcing.MongoDb.Autofac", "EventSourcing\Middlink.EventSourcing.MongoDb.Autofac\Middlink.EventSourcing.MongoDb.Autofac.csproj", "{89EACB46-B1A5-4EE3-A295-FF0C3B244B8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{210CDA29-DCE6-4473-BF44-63401F176510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Storage", "Storage\Middlink.Storage\Middlink.Storage.csproj", "{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Storage.MongoDb", "Storage\Middlink.Storage.MongoDb\Middlink.Storage.MongoDb.csproj", "{B41A17A8-31F3-46BD-A6C0-375C04D65E51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Storage.MongoDb.Autofac", "Storage\Middlink.Storage.MongoDb.Autofac\Middlink.Storage.MongoDb.Autofac.csproj", "{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +55,18 @@ Global
 		{89EACB46-B1A5-4EE3-A295-FF0C3B244B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89EACB46-B1A5-4EE3-A295-FF0C3B244B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89EACB46-B1A5-4EE3-A295-FF0C3B244B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B41A17A8-31F3-46BD-A6C0-375C04D65E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B41A17A8-31F3-46BD-A6C0-375C04D65E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B41A17A8-31F3-46BD-A6C0-375C04D65E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B41A17A8-31F3-46BD-A6C0-375C04D65E51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +75,9 @@ Global
 		{C5531BEE-E066-4ED1-B1EA-165CF8C6B3DB} = {3EBF52C3-683E-4692-AC8D-6D8A78468D0E}
 		{41B6AE43-2428-430B-ACDB-06189B933A60} = {3EBF52C3-683E-4692-AC8D-6D8A78468D0E}
 		{89EACB46-B1A5-4EE3-A295-FF0C3B244B8C} = {3EBF52C3-683E-4692-AC8D-6D8A78468D0E}
+		{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358} = {210CDA29-DCE6-4473-BF44-63401F176510}
+		{B41A17A8-31F3-46BD-A6C0-375C04D65E51} = {210CDA29-DCE6-4473-BF44-63401F176510}
+		{A5CCEC56-1459-4718-9A76-CFAE34F9ED27} = {210CDA29-DCE6-4473-BF44-63401F176510}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1498A3F2-CD29-4FEB-B475-8593392F6B34}

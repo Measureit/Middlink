@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Middlink.Repositories
+namespace Middlink.Storage
 {
     public static class Pagination
     {
