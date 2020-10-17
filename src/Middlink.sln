@@ -27,16 +27,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.Storage.MongoDb.Au
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{BDCC43A6-B110-45F4-8397-CEEE6443FDA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.MessageBus", "MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj", "{C61AC431-D156-438A-9202-2528EB00F430}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus", "MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj", "{C61AC431-D156-438A-9202-2528EB00F430}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6CCD8A4-43EE-4220-A370-414853E70843}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.MessageBus.InMemory", "MessageBus\Middlink.MessageBus.InMemory\Middlink.MessageBus.InMemory.csproj", "{85AEEC99-C822-4CB2-AB34-DCA0B2FE3F4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus.InMemory", "MessageBus\Middlink.MessageBus.InMemory\Middlink.MessageBus.InMemory.csproj", "{85AEEC99-C822-4CB2-AB34-DCA0B2FE3F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.MessageBus.InMemory.Autofac", "MessageBus\Middlink.MessageBus.InMemory.Autofac\Middlink.MessageBus.InMemory.Autofac.csproj", "{52469265-4968-4FD1-9695-45178C9D02B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus.InMemory.Autofac", "MessageBus\Middlink.MessageBus.InMemory.Autofac\Middlink.MessageBus.InMemory.Autofac.csproj", "{52469265-4968-4FD1-9695-45178C9D02B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Operations", "Operations", "{768805B0-EDFF-4201-B6D1-CB1094608213}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Operations", "Operations\Middlink.Operations\Middlink.Operations.csproj", "{16225D5B-6C69-43EE-BE64-98F9EF9527AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +96,10 @@ Global
 		{52469265-4968-4FD1-9695-45178C9D02B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52469265-4968-4FD1-9695-45178C9D02B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52469265-4968-4FD1-9695-45178C9D02B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16225D5B-6C69-43EE-BE64-98F9EF9527AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16225D5B-6C69-43EE-BE64-98F9EF9527AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16225D5B-6C69-43EE-BE64-98F9EF9527AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16225D5B-6C69-43EE-BE64-98F9EF9527AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +114,7 @@ Global
 		{C61AC431-D156-438A-9202-2528EB00F430} = {BDCC43A6-B110-45F4-8397-CEEE6443FDA7}
 		{85AEEC99-C822-4CB2-AB34-DCA0B2FE3F4F} = {BDCC43A6-B110-45F4-8397-CEEE6443FDA7}
 		{52469265-4968-4FD1-9695-45178C9D02B3} = {BDCC43A6-B110-45F4-8397-CEEE6443FDA7}
+		{16225D5B-6C69-43EE-BE64-98F9EF9527AA} = {768805B0-EDFF-4201-B6D1-CB1094608213}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1498A3F2-CD29-4FEB-B475-8593392F6B34}

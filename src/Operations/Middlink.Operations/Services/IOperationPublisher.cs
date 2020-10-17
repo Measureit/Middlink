@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Middlink.Services
+namespace Middlink.Operations.Services
 {
     public interface IOperationPublisher
     {

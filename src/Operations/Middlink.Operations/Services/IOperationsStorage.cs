@@ -1,5 +1,5 @@
-﻿using Middlink.Dto;
-using Middlink.Messages.Operations;
+﻿using Middlink.Messages.Operations;
+using Middlink.Operations.Dto;
 using System;
 using System.Threading.Tasks;
 

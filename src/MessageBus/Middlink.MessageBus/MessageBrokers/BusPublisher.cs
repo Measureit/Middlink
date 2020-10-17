@@ -2,10 +2,9 @@
 using Middlink.Messages;
 using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
-using Middlink.Services;
 using System.Threading.Tasks;
 
-namespace Middlink.MVC.Services.MessageBrokers
+namespace Middlink.MessageBus.MessageBrokers
 {
     public class BusPublisher : IBusPublisher
     {

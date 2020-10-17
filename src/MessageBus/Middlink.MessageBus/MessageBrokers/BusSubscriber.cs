@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Middlink.MessageBus.Dispatchers;
 using Middlink.MessageBus.Services;
@@ -11,21 +10,21 @@ using Polly;
 using System;
 using System.Threading.Tasks;
 
-namespace Middlink.MVC.Services.MessageBrokers
+namespace Middlink.MessageBus.MessageBrokers
 {
-  public class BusSubscriber : IBusSubscriber
+    public class BusSubscriber : IBusSubscriber
     {
         private readonly ILogger _logger;
         private readonly IServiceProvider _serviceProvider;
-        private readonly IApplicationBuilder _app;
+        private readonly IServiceProvider _appServiceProvider;
         private readonly IBusClient _busClient;
         private readonly int _retries;
         private readonly int _retryInterval;
-        public BusSubscriber(IApplicationBuilder app)
+        public BusSubscriber(IServiceProvider appServiceProvider)
         {
-            _app = app;
-            _logger = _app.ApplicationServices.GetService<ILogger<BusSubscriber>>();
-            _serviceProvider = _app.ApplicationServices.GetService<IServiceProvider>();
+            _appServiceProvider = appServiceProvider;
+            _logger = _appServiceProvider.GetService<ILogger<BusSubscriber>>();
+            _serviceProvider = _appServiceProvider.GetService<IServiceProvider>();
             _busClient = _serviceProvider.GetService<IBusClient>();
             _retries = 0;
             _retryInterval = 2;
@@ -40,7 +39,7 @@ namespace Middlink.MVC.Services.MessageBrokers
                 return TryHandleAsync(command, correlationContext,
                 () =>
                 {
-                    ICommandDispatcher dispatcher = _app.ApplicationServices.CreateScope().ServiceProvider.GetService<ICommandDispatcher>();
+                    ICommandDispatcher dispatcher = _appServiceProvider.CreateScope().ServiceProvider.GetService<ICommandDispatcher>();
                     return dispatcher.DispatchAsync(command, correlationContext);
                 }, onError);
             });
@@ -58,7 +57,7 @@ namespace Middlink.MVC.Services.MessageBrokers
                 return TryHandleAsync(@event, correlationContext,
                 () =>
                 {
-                    IEventDispatcher dispatcher = _app.ApplicationServices.CreateScope().ServiceProvider.GetService<IEventDispatcher>();
+                    IEventDispatcher dispatcher = _appServiceProvider.CreateScope().ServiceProvider.GetService<IEventDispatcher>();
                     return dispatcher.DispatchAsync(@event, correlationContext);
                 }, onError);
             });

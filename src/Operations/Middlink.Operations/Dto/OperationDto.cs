@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Middlink.Dto
+namespace Middlink.Operations.Dto
 {
 
-  public class OperationDto
+    public class OperationDto
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }

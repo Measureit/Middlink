@@ -1,6 +1,5 @@
 ﻿using Middlink.MessageBus.Services;
 using Middlink.Messages;
-using Middlink.Services;
 using System;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
