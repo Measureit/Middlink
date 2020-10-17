@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Middlink.Repositories
+﻿namespace Middlink.Storage.MongoDb
 {
     public class MongoDbOptions
     {

@@ -1,7 +1,6 @@
-﻿using Middlink.Messages.Entities;
+﻿using Middlink.Storage.Entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Middlink.EventSourcing
 {

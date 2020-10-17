@@ -1,14 +1,10 @@
 ﻿using Autofac;
-using Middlink.Repositories;
 using Microsoft.Extensions.Configuration;
+using Middlink.Extensions;
+using Middlink.Storage.Entities;
 using MongoDB.Driver;
-using Middlink.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Middlink.Messages.Entities;
 
-namespace Middlink.Extensions
+namespace Middlink.Storage.MongoDb.Autofac
 {
     public static class RepositoryExtensions
     {
@@ -38,7 +34,7 @@ namespace Middlink.Extensions
             }).InstancePerLifetimeScope();
 
             builder.RegisterType<MongoDbInitializer>()
-                .As<IMongoDbInitializer>()
+                .As<IInitializer>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<MongoDbSeeder>()

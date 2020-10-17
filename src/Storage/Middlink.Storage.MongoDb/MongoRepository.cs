@@ -1,5 +1,5 @@
-﻿using Middlink.Messages.Entities;
-using Middlink.Messages.Queries;
+﻿using Middlink.Messages.Queries;
+using Middlink.Storage.Entities;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 
-namespace Middlink.Repositories
+namespace Middlink.Storage.MongoDb
 {
     public class MongoRepository<TEntity> : IRepository<TEntity> where TEntity : IIdentifiable
     {
