@@ -23,6 +23,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
     <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
-    <ProjectReference Include="..\..\Storage\Middlink.Storage\Middlink.Storage.csproj" />
   </ItemGroup>
 </Project>
