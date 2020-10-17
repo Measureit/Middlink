@@ -36,7 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus.InMemory", "MessageBus\Middlink.MessageBus.InMemory\Middlink.MessageBus.InMemory.csproj", "{85AEEC99-C822-4CB2-AB34-DCA0B2FE3F4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus.InMemory.Autofac", "MessageBus\Middlink.MessageBus.InMemory.Autofac\Middlink.MessageBus.InMemory.Autofac.csproj", "{52469265-4968-4FD1-9695-45178C9D02B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus.Autofac", "MessageBus\Middlink.MessageBus.Autofac\Middlink.MessageBus.Autofac.csproj", "{52469265-4968-4FD1-9695-45178C9D02B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notifications", "Notifications", "{768805B0-EDFF-4201-B6D1-CB1094608213}"
 EndProject

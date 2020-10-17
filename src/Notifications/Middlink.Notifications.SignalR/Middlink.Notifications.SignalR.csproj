@@ -3,7 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.Notifications.SignalR</PackageId>
-    <Version>1.0.14.0</Version>
+    <Version>1.0.15.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -27,5 +27,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Middlink.Notifications\Middlink.Notifications.csproj" />
   </ItemGroup>
-
 </Project>

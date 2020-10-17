@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Builder;
+using Middlink.MessageBus.MessageBrokers;
+using Middlink.MessageBus.Services;
+using System;
 
 namespace Middlink.Notifications.SignalR.Extensions
 {
@@ -7,6 +10,5 @@ namespace Middlink.Notifications.SignalR.Extensions
         public static string ToUserGroup(this Guid userId) => userId.ToString().ToUserGroup();
 
         public static string ToUserGroup(this string userId) => $"users:{userId}";
-        //public static IBusSubscriber UseInMemoryQueue(this IApplicationBuilder app) => new BusSubscriber(app);
     }
 }

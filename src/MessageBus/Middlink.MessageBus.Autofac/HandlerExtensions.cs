@@ -2,7 +2,7 @@
 using Middlink.MessageBus.Handlers;
 using System.Reflection;
 
-namespace Middlink.MessageBus.InMemory.Autofac
+namespace Middlink.MessageBus.Autofac
 {
     public static class HandlerExtensions
     {
