@@ -1,11 +1,9 @@
-﻿using Middlink.Entities;
-using Middlink.Queries;
+﻿using Middlink.Messages.Entities;
+using Middlink.Messages.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
-using Middlink.Messages.Entities;
 
 namespace Middlink.Repositories
 {

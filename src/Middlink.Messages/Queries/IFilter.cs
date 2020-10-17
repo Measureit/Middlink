@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Middlink.Queries
+namespace Middlink.Messages.Queries
 {
     public interface IFilter<TResult, in TQuery> where TQuery : IQuery
     {

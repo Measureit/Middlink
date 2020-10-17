@@ -1,4 +1,4 @@
-﻿namespace Middlink.Queries
+﻿namespace Middlink.Messages.Queries
 {
     public interface IPagedQuery : IQuery
     {

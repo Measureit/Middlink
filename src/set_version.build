@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<project name="UpgradeMiddlink" default="replace">
+  <property name="version.number" value="1.0.10.0" />
+  <property name="version.suffix" value="" />
+  <property name="version" value="${version.number}" />
+  <if test="${version.suffix!=''}">
+    <property name="version" value="${version.number}-${version.suffix}" />
+  </if>
+
+  <property name="middlink.dir" value="." /> 
+
+  <target name="update-version">
+    <foreach item="File" property="csproj.file">
+      <in>
+        <items>
+          <include name="${middlink.dir}\**\*.csproj" />   
+        </items>
+      </in>
+      <do>
+        <xmlpoke file="${csproj.file}" xpath="/Project/PropertyGroup/Version" value="${version}" />
+      </do>
+    </foreach>
+  </target>
+
+  <target name="replace" depends="update-version" />
+ 
+ </project>
