@@ -1,16 +1,11 @@
-﻿using Autofac;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Middlink.Dispatchers;
-using Middlink.Handlers;
-using Middlink.Services;
+﻿using Microsoft.AspNetCore.Builder;
 using System;
-using System.Reflection;
 using Middlink.MVC.Services.MessageBrokers;
+using Middlink.MessageBus.Services;
 
 namespace Middlink.MVC.Extensions
 {
-    public static class Extensions
+  public static class Extensions
     {
     public static string ToUserGroup(this Guid userId) => userId.ToString().ToUserGroup();
 

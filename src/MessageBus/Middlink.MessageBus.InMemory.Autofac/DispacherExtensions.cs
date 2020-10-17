@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using Middlink.Dispatchers;
-using Middlink.Impl.Dispatchers;
+using Middlink.MessageBus.Dispatchers;
+using Middlink.MessageBus.InMemory.Dispatchers;
 
 namespace Middlink.Extensions
 {

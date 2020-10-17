@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Middlink.Dispatchers;
-using Middlink.Handlers;
+using Middlink.MessageBus.Dispatchers;
+using Middlink.MessageBus.Handlers;
 using Middlink.Messages;
 using Middlink.Messages.Commands;
 using System.Threading.Tasks;
 
-namespace Middlink.Impl.Dispatchers
+namespace Middlink.MessageBus.InMemory.Dispatchers
 {
     public class CommandDispatcher : ICommandDispatcher
     {

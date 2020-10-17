@@ -4,14 +4,8 @@ using System.Text;
 
 namespace Middlink.Dto
 {
-    public enum OperationState
-    {
-        Pending,
-        Completed,
-        Rejected
-    }
 
-    public class OperationDto
+  public class OperationDto
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }

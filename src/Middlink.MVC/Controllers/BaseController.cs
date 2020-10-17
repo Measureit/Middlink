@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Middlink.Dispatchers;
 using Middlink.Messages;
 using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
 using Middlink.Messages.Queries;
-using Middlink.Services;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Middlink.MessageBus.Services;
+using Middlink.MessageBus.Dispatchers;
 
 namespace Middlink.MVC.Controllers
 {

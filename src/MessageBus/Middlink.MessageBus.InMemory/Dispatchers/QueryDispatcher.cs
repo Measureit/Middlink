@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Middlink.Dispatchers;
-using Middlink.Handlers;
+﻿using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Middlink.MessageBus.Dispatchers;
+using Middlink.MessageBus.Handlers;
 using Middlink.Messages.Queries;
-using System.Threading.Tasks;
 
-namespace Middlink.Impl.Dispatchers
+
+namespace Middlink.MessageBus.InMemory.Dispatchers
 {
     public class QueryDispatcher : IQueryDispatcher
     {

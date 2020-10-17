@@ -1,11 +1,11 @@
-﻿using Middlink.Exceptions;
-using Middlink.Messages.Commands;
+﻿using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
+using Middlink.Messages.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Middlink.Services
+namespace Middlink.MessageBus.Services
 {
     public interface IBusSubscriber
     {
@@ -15,5 +15,5 @@ namespace Middlink.Services
         IBusSubscriber SubscribeEvent<TEvent>(string @namespace = null, string queueName = null,
                     Func<TEvent, MiddlinkException, IRejectedEvent> onError = null)
                     where TEvent : IDomainEvent;
-  }
+    }
 }

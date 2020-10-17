@@ -2,7 +2,7 @@
 using Middlink.Messages.Commands;
 using System.Threading.Tasks;
 
-namespace Middlink.Handlers
+namespace Middlink.MessageBus.Handlers
 {
     public interface ICommandHandler<TCommand> where TCommand : ICommand
     {

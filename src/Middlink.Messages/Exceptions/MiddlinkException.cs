@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Middlink.Exceptions
+namespace Middlink.Messages.Exceptions
 {
     public class MiddlinkException : Exception
     {

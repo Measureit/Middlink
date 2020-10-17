@@ -1,4 +1,5 @@
-﻿using Middlink.Messages;
+﻿using Middlink.MessageBus.Services;
+using Middlink.Messages;
 using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
 using Middlink.Services;

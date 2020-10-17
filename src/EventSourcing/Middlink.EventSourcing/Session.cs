@@ -1,8 +1,8 @@
 ﻿using Middlink.Exceptions;
+using Middlink.MessageBus.Services;
 using Middlink.Messages;
 using Middlink.Messages.Collections;
 using Middlink.Messages.Events;
-using Middlink.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

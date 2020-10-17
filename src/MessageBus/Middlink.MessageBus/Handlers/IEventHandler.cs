@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Middlink.Handlers
+namespace Middlink.MessageBus.Handlers
 {
     public interface IEventHandler<TEvent> where TEvent : IDomainEvent
     {

@@ -9,7 +9,7 @@
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
     <Product>Middlink.EventSourcing.MongoDb.Autofac</Product>
-    <Description>Middlewares interface library.</Description>
+    <Description>Autofac extensions for event sourcing for Middlink with store in MongoDb.</Description>
     <PackageTags>Middlink.EventSourcing.MongoDb.Autofac</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

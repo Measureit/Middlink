@@ -9,7 +9,7 @@
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
     <Product>Middlink.EventSourcing</Product>
-    <Description>Middlewares interface library.</Description>
+    <Description>Event sourcing for Middlink.</Description>
     <PackageTags>Middlink.EventSourcing</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -21,6 +21,7 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
     <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
     <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
   </ItemGroup>

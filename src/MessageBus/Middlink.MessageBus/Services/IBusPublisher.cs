@@ -3,7 +3,7 @@ using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
 using System.Threading.Tasks;
 
-namespace Middlink.Services
+namespace Middlink.MessageBus.Services
 {
     public interface IBusPublisher
     {

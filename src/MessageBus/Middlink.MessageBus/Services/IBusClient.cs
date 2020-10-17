@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Middlink.Services
+namespace Middlink.MessageBus.Services
 {
     public interface IBusClient
     {

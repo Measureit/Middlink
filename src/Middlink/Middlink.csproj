@@ -21,14 +21,21 @@
     <OutputPath>..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Handlers\Events\GenericEventHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0-rc.1.20451.14" />
     <PackageReference Include="System.Text.Json" Version="5.0.0-rc.1.20451.14" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0-rc.1.20451.14" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0-rc.1.20451.14" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Middlink.Messages\Middlink.Messages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\Events\" />
   </ItemGroup>
 </Project>

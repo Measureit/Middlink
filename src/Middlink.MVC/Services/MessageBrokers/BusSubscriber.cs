@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Middlink.Dispatchers;
-using Middlink.Exceptions;
+using Middlink.MessageBus.Dispatchers;
+using Middlink.MessageBus.Services;
 using Middlink.Messages;
 using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
-using Middlink.Services;
+using Middlink.Messages.Exceptions;
 using Polly;
 using System;
 using System.Threading.Tasks;
 
 namespace Middlink.MVC.Services.MessageBrokers
 {
-    public class BusSubscriber : IBusSubscriber
+  public class BusSubscriber : IBusSubscriber
     {
         private readonly ILogger _logger;
         private readonly IServiceProvider _serviceProvider;

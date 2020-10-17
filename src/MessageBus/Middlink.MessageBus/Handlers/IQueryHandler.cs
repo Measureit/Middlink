@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Middlink.Handlers
+namespace Middlink.MessageBus.Handlers
 {
     public interface IQueryHandler<in TQuery, TResult>
     {

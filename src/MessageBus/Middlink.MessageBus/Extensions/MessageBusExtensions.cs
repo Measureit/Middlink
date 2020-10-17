@@ -1,12 +1,12 @@
-﻿using Middlink.Messages;
+﻿using Middlink.MessageBus.Services;
+using Middlink.Messages;
 using Middlink.Messages.Commands;
 using Middlink.Messages.Events;
-using Middlink.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Middlink.Extensions
+namespace Middlink.MessageBus.Extensions
 {
     public static class MessageBusExtensions
     {

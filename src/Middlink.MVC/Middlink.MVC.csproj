@@ -29,6 +29,7 @@
     <PackageReference Include="Polly" Version="7.2.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
     <ProjectReference Include="..\Middlink.Messages\Middlink.Messages.csproj" />
     <ProjectReference Include="..\Middlink\Middlink.csproj" />
   </ItemGroup>
