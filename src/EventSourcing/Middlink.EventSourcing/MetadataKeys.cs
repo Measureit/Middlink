@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Middlink.EventSource
+namespace Middlink.EventSourcing
 {
     public struct MetadataKeys
     {

@@ -3,7 +3,7 @@ using Middlink.Messages.Events;
 using System;
 using System.Collections.Generic;
 
-namespace Middlink.EventSource
+namespace Middlink.EventSourcing
 {
     public abstract class AggregateRoot
     {

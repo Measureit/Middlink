@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Middlink.EventSource
+namespace Middlink.EventSourcing
 {
     public class Route<T> : Dictionary<Type, Action<T>>
     {

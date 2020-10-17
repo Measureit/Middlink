@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Middlink.EventSource
+namespace Middlink.EventSourcing
 {
     public class AggregateTracker
     {

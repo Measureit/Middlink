@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Middlink.EventSource
+namespace Middlink.EventSourcing
 {
     public interface ISession
     {
