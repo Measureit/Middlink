@@ -19,11 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.EventSourcing.Mong
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{210CDA29-DCE6-4473-BF44-63401F176510}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Storage", "Storage\Middlink.Storage\Middlink.Storage.csproj", "{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.Storage", "Storage\Middlink.Storage\Middlink.Storage.csproj", "{7DC861BB-BEA2-4FA9-89AD-4EA06C84D358}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Storage.MongoDb", "Storage\Middlink.Storage.MongoDb\Middlink.Storage.MongoDb.csproj", "{B41A17A8-31F3-46BD-A6C0-375C04D65E51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.Storage.MongoDb", "Storage\Middlink.Storage.MongoDb\Middlink.Storage.MongoDb.csproj", "{B41A17A8-31F3-46BD-A6C0-375C04D65E51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Storage.MongoDb.Autofac", "Storage\Middlink.Storage.MongoDb.Autofac\Middlink.Storage.MongoDb.Autofac.csproj", "{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.Storage.MongoDb.Autofac", "Storage\Middlink.Storage.MongoDb.Autofac\Middlink.Storage.MongoDb.Autofac.csproj", "{A5CCEC56-1459-4718-9A76-CFAE34F9ED27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{BDCC43A6-B110-45F4-8397-CEEE6443FDA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
