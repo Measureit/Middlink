@@ -2,15 +2,15 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Middlink.Notifications.SignalR</PackageId>
+    <PackageId>Middlink.CQRS.Operations.SignalR</PackageId>
     <Version>1.0.15.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
-    <Product>Middlink.Notifications.SignalR</Product>
-    <Description>Middlink Notifications implemented by SignalR.</Description>
-    <PackageTags>Middlink;Middlink.Notifications.SignalR</PackageTags>
+    <Product>Middlink.CQRS.Operations.SignalR</Product>
+    <Description>Middlink CQRS.Operations implemented by SignalR.</Description>
+    <PackageTags>Middlink;Middlink.CQRS.Operations.SignalR</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
@@ -25,6 +25,6 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Middlink.Notifications\Middlink.CQRS.Operations.csproj" />
+    <ProjectReference Include="..\Middlink.CQRS.Operations\Middlink.CQRS.Operations.csproj" />
   </ItemGroup>
 </Project>
