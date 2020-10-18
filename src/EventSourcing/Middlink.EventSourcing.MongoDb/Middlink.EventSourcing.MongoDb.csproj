@@ -3,13 +3,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.EventSourcing.MongoDb</PackageId>
-    <Version>1.0.13.0</Version>
+    <Version>1.0.15.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
     <Product>Middlink.EventSourcing.MongoDb</Product>
-    <Description>Middlewares interface library.</Description>
+    <Description>Event sourcing for Middlink with store in MongoDb.</Description>
     <PackageTags>Middlink.EventSourcing.MongoDb</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -25,7 +25,6 @@
     <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
     <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
     <ProjectReference Include="..\Middlink.EventSourcing\Middlink.EventSourcing.csproj" />
   </ItemGroup>

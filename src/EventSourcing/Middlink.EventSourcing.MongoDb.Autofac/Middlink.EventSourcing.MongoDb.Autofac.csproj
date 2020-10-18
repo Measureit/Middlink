@@ -3,13 +3,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.EventSourcing.MongoDb.Autofac</PackageId>
-    <Version>1.0.13.0</Version>
+    <Version>1.0.15.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
     <Product>Middlink.EventSourcing.MongoDb.Autofac</Product>
-    <Description>Middlewares interface library.</Description>
+    <Description>Autofac extensions for event sourcing for Middlink with store in MongoDb.</Description>
     <PackageTags>Middlink.EventSourcing.MongoDb.Autofac</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

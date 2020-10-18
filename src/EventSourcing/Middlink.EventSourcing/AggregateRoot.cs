@@ -1,5 +1,5 @@
-using Middlink.Messages.Collections;
-using Middlink.Messages.Events;
+using Middlink.Collections;
+using Middlink.Events;
 using System;
 using System.Collections.Generic;
 

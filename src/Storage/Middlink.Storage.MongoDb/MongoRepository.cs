@@ -1,4 +1,4 @@
-﻿using Middlink.Messages.Queries;
+﻿using Middlink.Queries;
 using Middlink.Storage.Entities;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;

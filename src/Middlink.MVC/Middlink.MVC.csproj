@@ -3,7 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.MVC</PackageId>
-    <Version>1.0.13.0</Version>
+    <Version>1.0.15.0</Version>
     <Authors>Jarosław Kurdzieko</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -24,12 +24,8 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0-rc.1.20451.17" />
-    <PackageReference Include="System.Reactive" Version="4.4.1" />
-    <PackageReference Include="Polly" Version="7.2.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Middlink.Messages\Middlink.Messages.csproj" />
+    <ProjectReference Include="..\CQRS\Middlink.CQRS\Middlink.CQRS.csproj" />
+    <ProjectReference Include="..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
     <ProjectReference Include="..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>

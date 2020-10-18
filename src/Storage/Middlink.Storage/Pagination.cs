@@ -1,4 +1,4 @@
-﻿using Middlink.Messages.Queries;
+﻿using Middlink.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
