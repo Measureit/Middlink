@@ -21,7 +21,6 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CQRS\Middlink.CQRS\Middlink.CQRS.csproj" />
-    <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
+    <ProjectReference Include="..\..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
   </ItemGroup>
 </Project>

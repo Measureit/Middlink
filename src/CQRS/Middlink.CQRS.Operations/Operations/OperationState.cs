@@ -1,4 +1,4 @@
-﻿namespace Middlink.Notifications.Operations
+﻿namespace Middlink.CQRS.Operations.Operations
 {
     public enum OperationState
     {

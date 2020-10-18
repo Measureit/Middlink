@@ -1,11 +1,10 @@
-﻿using Middlink.MessageBus.Handlers;
-using Middlink.Messages;
-using Middlink.Messages.Events;
-using Middlink.Notifications.Operations;
-using Middlink.Notifications.Services.Operations;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Middlink.CQRS.Handlers;
+using Middlink.CQRS.Operations.Operations;
+using Middlink.CQRS.Operations.Services.Operations;
+using Middlink.Events;
 
-namespace Middlink.Notifications.Handlers.Events
+namespace Middlink.CQRS.Operations.Handlers.Events
 {
     public class GenericEventHandler<T> : IEventHandler<T> where T : class, IDomainEvent
     {

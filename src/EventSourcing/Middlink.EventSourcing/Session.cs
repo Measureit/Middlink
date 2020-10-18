@@ -1,11 +1,11 @@
 ﻿using Middlink.Collections;
-using Middlink.CQRS.MessageBus;
 using Middlink.Events;
 using Middlink.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Middlink.MessageBus;
 
 namespace Middlink.EventSourcing
 {
@@ -14,16 +14,16 @@ namespace Middlink.EventSourcing
         private readonly AggregateTracker _aggregateTracker = new AggregateTracker();
         private readonly List<AggregateRoot> _aggregates = new List<AggregateRoot>();
         private readonly IEventStore _eventStore;
-        private readonly IPublisher _publisher;
+        private readonly IBusClient _busClient;
 
         public IReadOnlyList<AggregateRoot> Aggregates => _aggregates.AsReadOnly();
 
         public Session(
             IEventStore eventStore,
-            IPublisher publisher)
+            IBusClient busClient)
         {
             _eventStore = eventStore ?? throw new ArgumentNullException(nameof(eventStore));
-            _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
+            _busClient = busClient ?? throw new ArgumentNullException(nameof(busClient));
         }
 
         public async Task<TAggregate> GetByIdAsync<TAggregate>(Guid id) where TAggregate : AggregateRoot, new()
@@ -71,7 +71,7 @@ namespace Middlink.EventSourcing
 
             foreach (var @event in uncommittedEvents)
             {
-                await _publisher.PublishAsync(@event.Data, context);
+                await _busClient.PublishAsync(@event.Data, context);
             }
             await _eventStore.Commit(aggregate);
             //ToDo remove events from store if failed

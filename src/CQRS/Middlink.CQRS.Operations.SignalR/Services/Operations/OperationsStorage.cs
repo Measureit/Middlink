@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
-using Middlink.Notifications.Dto;
-using Middlink.Notifications.Operations;
-using Middlink.Notifications.Services.Operations;
 using System;
 using System.Threading.Tasks;
+using Middlink.CQRS.Operations.Dto;
+using Middlink.CQRS.Operations.Operations;
+using Middlink.CQRS.Operations.Services.Operations;
 
-namespace Middlink.Notifications.SignalR.Services.Operations
+namespace Middlink.CQRS.Operations.SignalR.Services.Operations
 {
     public class OperationsStorage : IOperationsStorage
     {
