@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -24,6 +24,6 @@
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
+    <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>

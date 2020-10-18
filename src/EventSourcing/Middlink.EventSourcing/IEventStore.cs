@@ -1,4 +1,4 @@
-﻿using Middlink.Messages.Events;
+﻿using Middlink.Events;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

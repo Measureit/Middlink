@@ -24,13 +24,8 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0-rc.2.20475.17" />
-    <PackageReference Include="System.Reactive" Version="4.4.1" />
-    <PackageReference Include="Polly" Version="7.2.1" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\CQRS\Middlink.CQRS\Middlink.CQRS.csproj" />
     <ProjectReference Include="..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
-    <ProjectReference Include="..\Middlink.Messages\Middlink.Messages.csproj" />
     <ProjectReference Include="..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>

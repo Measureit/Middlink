@@ -1,14 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Middlink.Messages;
-using Middlink.Messages.Commands;
-using Middlink.Messages.Events;
-using Middlink.Messages.Queries;
+using Middlink.Commands;
+using Middlink.CQRS.Dispatchers;
+using Middlink.CQRS.MessageBus;
+using Middlink.Events;
+using Middlink.Queries;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Middlink.MessageBus.Services;
-using Middlink.MessageBus.Dispatchers;
+//services => UseInMemoryMessageBus().=> IBuClient
+//UseMongoStorage() => IRepository
+//UseCQRS() => Dispatchers && Subscribers
+//UseEventSourcing() => ISession
+//UseMongoEventStore() => IReposiotry<EventDescription>
 
+//var b = new MiddLinkBuilder();
+//app.UseCQRS(o => 
+//o.UseInMemoryMessegeBus();
+//o.UseEventSourcing(r => 
+//    r.MongoEventStore().
+//))
+//.SubscribeCommand<CreateLive>(
+//  onError: (c, e) =>
+//      new RejectedEvent(c.AggregateId, e.Message, e.Code))
 namespace Middlink.MVC.Controllers
 {
     public abstract class BaseController : ControllerBase
@@ -19,14 +32,14 @@ namespace Middlink.MVC.Controllers
         private static readonly string ResourceIdHeader = "X-ResourceId";
         private static readonly string DefaultCulture = "en-us";
         private static readonly string PageLink = "page";
-        private readonly IBusPublisher _busPublisher;
+        private readonly IPublisher _publisher;
         private readonly IQueryDispatcher _queryDispatcher;
 
         public BaseController(
-            IBusPublisher busPublisher,
+            IPublisher publisher,
             IQueryDispatcher queryDispatcher)
         {
-            _busPublisher = busPublisher;
+            _publisher = publisher;
             _queryDispatcher = queryDispatcher;
         }
 
@@ -71,7 +84,7 @@ namespace Middlink.MVC.Controllers
             Guid? resourceId = null, string resource = "") where T : ICommand
         {
             var context = GetContext<T>(resourceId, resource);
-            await _busPublisher.SendAsync(command, context);
+            await _publisher.SendAsync(command, context);
 
             return Accepted(context);
         }
@@ -81,7 +94,7 @@ namespace Middlink.MVC.Controllers
         {
             var context = await GetContextAsync<T>(resourceId, resource);
 
-            await _busPublisher.PublishAsync(@event, context);
+            await _publisher.PublishAsync(@event, context);
 
             return Ok(context);
         }

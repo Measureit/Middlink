@@ -21,11 +21,6 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.9" />
-    <PackageReference Include="Polly" Version="7.2.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
+    <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>
