@@ -1,32 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>Middlink.CQRS.Autofac</PackageId>
-        <Version>1.0.15.0</Version>
-        <Authors>Measureit</Authors>
-        <Owners>Measureit</Owners>
-        <ProjectUrl>http://measureit.pl</ProjectUrl>
-        <Copyright>Copyright (c) Measureit</Copyright>
-        <Product>Middlink.CQRS.Autofac</Product>
-        <Description>Middlink CQRS.Autofac.</Description>
-        <PackageTags>Middlink;Middlink.CQRS.Autofac</PackageTags>
-        <LangVersion>9.0</LangVersion>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <RepositoryType>Git</RepositoryType>
-        <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
-        <RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
-    </PropertyGroup>
-    <PropertyGroup>
-        <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
-    </PropertyGroup>
-
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Middlink.CQRS.Autofac</PackageId>
+    <Version>1.0.16.0</Version>
+    <Authors>Measureit</Authors>
+    <Owners>Measureit</Owners>
+    <ProjectUrl>http://measureit.pl</ProjectUrl>
+    <Copyright>Copyright (c) Measureit</Copyright>
+    <Product>Middlink.CQRS.Autofac</Product>
+    <Description>Middlink CQRS.Autofac.</Description>
+    <PackageTags>Middlink;Middlink.CQRS.Autofac</PackageTags>
+    <LangVersion>9.0</LangVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>Git</RepositoryType>
+    <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Middlink.CQRS\Middlink.CQRS.csproj" />
   </ItemGroup>
-
 </Project>
