@@ -1,8 +1,7 @@
-﻿using Middlink.Messages;
-using System;
+﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Middlink.Notifications.Operations
+namespace Middlink.CQRS.Operations.Operations
 {
     public class OperationPending : IMessage
     {

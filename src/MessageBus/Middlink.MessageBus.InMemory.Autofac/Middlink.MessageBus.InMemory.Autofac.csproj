@@ -1,30 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>Middlink.MessageBus.InMemory.Autofac</PackageId>
-        <Version>1.0.15.0</Version>
-        <Authors>Measureit</Authors>
-        <Owners>Measureit</Owners>
-        <ProjectUrl>http://measureit.pl</ProjectUrl>
-        <Copyright>Copyright (c) Measureit</Copyright>
-        <Product>Middlink.MessageBus.InMemory.Autofac</Product>
-        <Description>Middlink in memory message bus.</Description>
-        <PackageTags>Middlink</PackageTags>
-        <LangVersion>9.0</LangVersion>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <RepositoryType>Git</RepositoryType>
-        <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
-        <RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
-    </PropertyGroup>
-
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Middlink.MessageBus.InMemory.Autofac</PackageId>
+    <Version>1.0.18.0</Version>
+    <Authors>Measureit</Authors>
+    <Owners>Measureit</Owners>
+    <ProjectUrl>http://measureit.pl</ProjectUrl>
+    <Copyright>Copyright (c) Measureit</Copyright>
+    <Product>Middlink.MessageBus.InMemory.Autofac</Product>
+    <Description>Middlink in memory message bus.</Description>
+    <PackageTags>Middlink</PackageTags>
+    <LangVersion>9.0</LangVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>Git</RepositoryType>
+    <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Middlink.MessageBus.InMemory\Middlink.MessageBus.InMemory.csproj" />
   </ItemGroup>
-
 </Project>

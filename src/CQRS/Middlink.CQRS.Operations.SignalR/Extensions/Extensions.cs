@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Middlink.MessageBus.MessageBrokers;
-using Middlink.MessageBus.Services;
-using System;
+﻿using System;
 
-namespace Middlink.Notifications.SignalR.Extensions
+namespace Middlink.CQRS.Operations.SignalR.Extensions
 {
     public static class Extensions
     {

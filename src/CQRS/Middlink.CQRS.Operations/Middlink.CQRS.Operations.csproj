@@ -2,15 +2,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Middlink.Notifications</PackageId>
-    <Version>1.0.15.0</Version>
+    <PackageId>Middlink.CQRS.Operations</PackageId>
+    <Version>1.0.18.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
     <Copyright>Copyright (c) Measureit</Copyright>
-    <Product>Middlink.Notifications</Product>
-    <Description>Middlink Notifications.</Description>
-    <PackageTags>Middlink;Middlink.Notifications</PackageTags>
+    <Product>Middlink.CQRS.Operations</Product>
+    <Description>Middlink CQRS.Operations.</Description>
+    <PackageTags>Middlink;Middlink.CQRS.Operations</PackageTags>
     <LangVersion>9.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
@@ -21,8 +21,7 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
-    <ProjectReference Include="..\..\Middlink.Messages\Middlink.Messages.csproj" />
+    <ProjectReference Include="..\Middlink.CQRS\Middlink.CQRS.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Handlers\Events\" />

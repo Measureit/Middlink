@@ -1,10 +1,6 @@
-﻿using Middlink.Messages;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace Middlink.Notifications.Services.Operations
+namespace Middlink.CQRS.Operations.Services.Operations
 {
     public interface IOperationPublisher
     {
