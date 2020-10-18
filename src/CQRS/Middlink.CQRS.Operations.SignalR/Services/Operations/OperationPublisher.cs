@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using Middlink.Messages;
-using Middlink.Notifications.SignalR.Hubs;
 using System.Threading.Tasks;
 using Middlink.CQRS.Operations.Hubs.Broadcasters;
 using Middlink.CQRS.Operations.Operations;
 using Middlink.CQRS.Operations.Services.Operations;
+using Middlink.CQRS.Operations.SignalR.Hubs;
+using Middlink.CQRS.Operations.SignalR.Extensions;
 
 namespace Middlink.CQRS.Operations.SignalR.Services.Operations
 {

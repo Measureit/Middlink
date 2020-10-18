@@ -1,4 +1,6 @@
-﻿namespace Middlink.CQRS.Operations.SignalR.Extensions
+﻿using System;
+
+namespace Middlink.CQRS.Operations.SignalR.Extensions
 {
     public static class Extensions
     {

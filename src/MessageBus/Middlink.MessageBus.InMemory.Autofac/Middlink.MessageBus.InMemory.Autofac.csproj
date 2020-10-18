@@ -17,6 +17,9 @@
     <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/Measureit/Middlink</RepositoryUrl>
   </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />
   </ItemGroup>
