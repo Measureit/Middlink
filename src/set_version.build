@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <project name="UpgradeMiddlink" default="replace">
-  <property name="version.number" value="1.0.19.0" />
-  <property name="version.suffix" value="" />
+  <property name="version.number" value="1.0.20.0" />
+  <property name="version.suffix" value="preview3" />
   <property name="version" value="${version.number}" />
   <if test="${version.suffix!=''}">
     <property name="version" value="${version.number}-${version.suffix}" />
