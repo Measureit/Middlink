@@ -7,24 +7,29 @@ using System;
 
 namespace Middlink.Storage.MongoDb.Autofac
 {
-    //public interface IRepositoryBuilder
-    //{
-        
+  //to  można wykorzystać bardziej generycznie (nie tylko dla mongo)
+    public interface IRepositoryBuilder
+    {
+        IRepositoryBuilder AddRepository<TEntity>(string collectionName)
+            where TEntity : IIdentifiable;
+    }
+    internal class MongoRepositoryBuilder : IRepositoryBuilder
+    {
+        private readonly ContainerBuilder _containerBuilder;
+        public MongoRepositoryBuilder(ContainerBuilder builder)
+        {
+            _containerBuilder = builder;
+        }
 
-    //}
-    //internal class RepositoryBuilder : IRepositoryBuilder
-    //{
-    //    public RepositoryBuilder(ContainerBuilder builder)
-    //    {
-    //        ContainerBuilder = builder;
-    //    }
-
-    //    internal ContainerBuilder ContainerBuilder { get; private set; }
-    //}
+        public IRepositoryBuilder AddRepository<TEntity>(string collectionName) where TEntity : IIdentifiable
+        {
+            RepositoryExtensions.AddMongoRepository<TEntity>(_containerBuilder, collectionName);
+            return this;
+        }
+    }
     public static class RepositoryExtensions
     {
-        public static void AddMongo(this ContainerBuilder builder)
-            //, Func<IRepositoryBuilder, IRepositoryBuilder> repositoryBuilderAction)
+        public static void AddMongo(this ContainerBuilder builder, Action<IRepositoryBuilder> repositoryBuilderAction = null)
         {
             builder.Register(context =>
             {
@@ -57,7 +62,10 @@ namespace Middlink.Storage.MongoDb.Autofac
                 .As<IMongoDbSeeder>()
                 .InstancePerLifetimeScope();
 
-            //repositoryBuilderAction(new RepositoryBuilder(builder));
+            if (repositoryBuilderAction != null)
+            {
+                repositoryBuilderAction(new MongoRepositoryBuilder(builder));
+            }
         }
 
         public static void AddMongoRepository<TEntity>(this ContainerBuilder builder, string collectionName) where TEntity : IIdentifiable
