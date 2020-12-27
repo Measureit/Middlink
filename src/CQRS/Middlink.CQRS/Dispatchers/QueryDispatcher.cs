@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Middlink.CQRS.Handlers;
-using Middlink.Queries;
+using Middlink.Core.CQRS.Dispatchers;
+using Middlink.Core.CQRS.Handlers;
+using Middlink.Core.CQRS.Queries;
 using System.Threading.Tasks;
 
 

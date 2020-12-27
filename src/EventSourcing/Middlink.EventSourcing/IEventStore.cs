@@ -1,4 +1,4 @@
-﻿using Middlink.Events;
+﻿using Middlink.Core.CQRS.Events;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

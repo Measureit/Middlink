@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Middlink.Core.MessageBus;
 
 namespace Middlink.MessageBus.InMemory.Autofac
 {

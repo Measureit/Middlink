@@ -3,7 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.CQRS.Operations.SignalR</PackageId>
-    <Version>1.0.22.0</Version>
+    <Version>1.0.23.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -25,6 +25,6 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Middlink.CQRS.Operations\Middlink.CQRS.Operations.csproj" />
+    <ProjectReference Include="..\..\Middlink.Core\Middlink.Core.csproj" />
   </ItemGroup>
 </Project>

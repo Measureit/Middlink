@@ -1,6 +1,6 @@
-﻿using Middlink.Collections;
-using Middlink.Events;
-using Middlink.Exceptions;
+﻿using Middlink.Core.CQRS.Collections;
+using Middlink.Core.CQRS.Events;
+using Middlink.Core.Exceptions;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;

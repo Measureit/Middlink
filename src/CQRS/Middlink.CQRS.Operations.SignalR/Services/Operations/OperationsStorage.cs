@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
+using Middlink.Core.CQRS.Operations;
 using System;
 using System.Threading.Tasks;
-using Middlink.CQRS.Operations.Dto;
-using Middlink.CQRS.Operations.Operations;
-using Middlink.CQRS.Operations.Services.Operations;
 
 namespace Middlink.CQRS.Operations.SignalR.Services.Operations
 {

@@ -3,7 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.MVC</PackageId>
-    <Version>1.0.22.0</Version>
+    <Version>1.0.23.0</Version>
     <Authors>Jarosław Kurdzieko</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -25,7 +25,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CQRS\Middlink.CQRS\Middlink.CQRS.csproj" />
-    <ProjectReference Include="..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
     <ProjectReference Include="..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>

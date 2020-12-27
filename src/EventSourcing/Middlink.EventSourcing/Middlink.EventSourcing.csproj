@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.EventSourcing</PackageId>
-    <Version>1.0.22.0</Version>
+    <Version>1.0.23.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -21,6 +21,6 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
+    <ProjectReference Include="..\..\Middlink.Core\Middlink.Core.csproj" />
   </ItemGroup>
 </Project>

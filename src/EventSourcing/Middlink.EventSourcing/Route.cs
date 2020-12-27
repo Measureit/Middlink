@@ -1,4 +1,4 @@
-﻿using Middlink.Exceptions;
+﻿using Middlink.Core.Exceptions;
 using System;
 using System.Collections.Generic;
 

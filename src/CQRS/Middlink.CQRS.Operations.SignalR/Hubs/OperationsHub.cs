@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
-using Middlink.CQRS.Operations.Hubs.Broadcasters;
 using Middlink.CQRS.Operations.SignalR.Extensions;
 
 namespace Middlink.CQRS.Operations.SignalR.Hubs

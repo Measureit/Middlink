@@ -1,6 +1,7 @@
-﻿using Middlink.Commands;
-using Middlink.Events;
-using Middlink.MessageBus;
+﻿using Middlink.Core;
+using Middlink.Core.CQRS.Commands;
+using Middlink.Core.CQRS.Events;
+using Middlink.Core.MessageBus;
 using System.Threading.Tasks;
 
 namespace Middlink.CQRS.MessageBus

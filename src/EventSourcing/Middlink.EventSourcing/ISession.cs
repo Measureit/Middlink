@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Middlink.Core;
+using System;
 using System.Threading.Tasks;
 
 namespace Middlink.EventSourcing

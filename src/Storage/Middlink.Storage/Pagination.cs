@@ -1,4 +1,4 @@
-﻿using Middlink.Queries;
+﻿using Middlink.Core.CQRS.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
