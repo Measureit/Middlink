@@ -25,7 +25,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CQRS\Middlink.CQRS\Middlink.CQRS.csproj" />
-    <ProjectReference Include="..\MessageBus\Middlink.MessageBus\Middlink.MessageBus.csproj" />
     <ProjectReference Include="..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>

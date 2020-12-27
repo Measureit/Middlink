@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Middlink.Commands;
-using Middlink.CQRS.Dispatchers;
-using Middlink.Events;
-using Middlink.Exceptions;
-using Middlink.MessageBus;
+using Middlink.Core;
+using Middlink.Core.CQRS.Commands;
+using Middlink.Core.CQRS.Dispatchers;
+using Middlink.Core.CQRS.Events;
+using Middlink.Core.Exceptions;
+using Middlink.Core.MessageBus;
 using Polly;
 using System;
 using System.Threading.Tasks;

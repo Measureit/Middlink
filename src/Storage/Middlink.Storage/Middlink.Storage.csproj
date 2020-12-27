@@ -24,6 +24,7 @@
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Middlink.Core\Middlink.Core.csproj" />
     <ProjectReference Include="..\..\Middlink\Middlink.csproj" />
   </ItemGroup>
 </Project>

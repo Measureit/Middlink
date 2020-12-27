@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Middlink.Commands;
-using Middlink.CQRS.Dispatchers;
-using Middlink.CQRS.MessageBus;
-using Middlink.Events;
-using Middlink.Queries;
+using Middlink.Core;
+using Middlink.Core.CQRS.Commands;
+using Middlink.Core.CQRS.Dispatchers;
+using Middlink.Core.CQRS.Events;
+using Middlink.Core.CQRS.Queries;
+using Middlink.Core.MessageBus;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

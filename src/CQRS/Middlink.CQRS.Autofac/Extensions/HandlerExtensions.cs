@@ -1,18 +1,18 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Builder;
-using Middlink.Commands;
-using Middlink.CQRS.Handlers;
+using Middlink.Core.CQRS.Commands;
+using Middlink.Core.CQRS.Events;
+using Middlink.Core.CQRS.Handlers;
+using Middlink.Core.Exceptions;
+using Middlink.Core.MessageBus;
 using Middlink.CQRS.MessageBus;
-using Middlink.Events;
-using Middlink.Exceptions;
-using Middlink.MessageBus;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 
 namespace Middlink.CQRS.Autofac.Extensions
 {
-  public interface ICQRSBuilder
+    public interface ICQRSBuilder
   {
     ICQRSBuilder SubscribeCommand<TCommand>(string @namespace = null, string queueName = null,
                   Func<TCommand, MiddlinkException, IRejectedEvent> onError = null)

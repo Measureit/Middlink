@@ -1,11 +1,12 @@
-﻿using Middlink.Collections;
-using Middlink.Events;
-using Middlink.Exceptions;
+﻿using Middlink.Core;
+using Middlink.Core.CQRS.Collections;
+using Middlink.Core.CQRS.Events;
+using Middlink.Core.Exceptions;
+using Middlink.Core.MessageBus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Middlink.MessageBus;
 
 namespace Middlink.EventSourcing
 {

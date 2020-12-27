@@ -1,5 +1,5 @@
-using Middlink.Collections;
-using Middlink.Events;
+﻿using Middlink.Core.CQRS.Collections;
+using Middlink.Core.CQRS.Events;
 using System;
 using System.Collections.Generic;
 
