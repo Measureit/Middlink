@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.Core</PackageId>
-    <Version>1.0.23.0</Version>
+    <Version>1.0.24.0</Version>
     <Authors>Jarosław Kurdzieko</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
