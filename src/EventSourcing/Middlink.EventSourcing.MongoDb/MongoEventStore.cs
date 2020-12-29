@@ -97,7 +97,7 @@ namespace Middlink.EventSourcing.MongoDb
             var eventType = eventToSerialize.Metadata.GetValue(MetadataKeys.EventName, value => value.ToString());
             var timestamp = eventToSerialize.Metadata.GetValue(MetadataKeys.Timestamp, value => (DateTime)value);
 
-            var dataJson = JsonSerializer.Serialize(eventToSerialize.Data, JsonSettings);
+            var dataJson = JsonSerializer.Serialize(eventToSerialize.Data, eventToSerialize.Data.GetType(), JsonSettings);
             var metadataJson = JsonSerializer.Serialize(eventToSerialize.Metadata, JsonSettings);
 
             var @event = new EventDocument

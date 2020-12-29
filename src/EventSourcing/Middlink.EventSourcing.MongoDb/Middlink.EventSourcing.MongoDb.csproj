@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.EventSourcing.MongoDb</PackageId>
-    <Version>1.0.24.0</Version>
+    <Version>1.0.25.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
