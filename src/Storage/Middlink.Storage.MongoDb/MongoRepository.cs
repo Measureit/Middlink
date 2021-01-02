@@ -1,5 +1,5 @@
 ﻿using Middlink.Core.CQRS.Queries;
-using Middlink.Storage.Entities;
+using Middlink.Core.Storage;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;

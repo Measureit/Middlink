@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.Storage.MongoDb</PackageId>
-    <Version>1.0.25.0</Version>
+    <Version>1.0.26.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -24,6 +24,6 @@
     <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Middlink.Storage\Middlink.Storage.csproj" />
+    <ProjectReference Include="..\..\Middlink.Core\Middlink.Core.csproj" />
   </ItemGroup>
 </Project>
