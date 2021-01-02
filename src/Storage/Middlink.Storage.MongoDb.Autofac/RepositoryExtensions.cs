@@ -1,13 +1,13 @@
 ﻿using Autofac;
 using Microsoft.Extensions.Configuration;
+using Middlink.Core.Storage;
 using Middlink.Extensions;
-using Middlink.Storage.Entities;
 using MongoDB.Driver;
 using System;
 
 namespace Middlink.Storage.MongoDb.Autofac
 {
-  //to  można wykorzystać bardziej generycznie (nie tylko dla mongo)
+    //to  można wykorzystać bardziej generycznie (nie tylko dla mongo)
     public interface IRepositoryBuilder
     {
         IRepositoryBuilder AddRepository<TEntity>(string collectionName)

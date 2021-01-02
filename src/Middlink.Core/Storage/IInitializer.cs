@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Middlink.Storage
+namespace Middlink.Core.Storage
 {
     public interface IInitializer
     {

@@ -1,15 +1,17 @@
 ﻿using Middlink.Core.CQRS.Queries;
-using Middlink.Storage.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Middlink.Storage
+namespace Middlink.Core.Storage
 {
-    public interface IRepository<TEntity> where TEntity : IIdentifiable
+    public interface IRepository<TEntity> : IRepository<TEntity, Guid> 
+        where TEntity : IIdentifiable<Guid> { }
+    public interface IRepository<TEntity, TKey> 
+        where TEntity : IIdentifiable<TKey>
     {
-        ValueTask<TEntity> GetAsync(Guid id);
+        ValueTask<TEntity> GetAsync(TKey id);
         ValueTask<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate);
         ValueTask<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate);
         ValueTask<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, object>> orderSelector);
