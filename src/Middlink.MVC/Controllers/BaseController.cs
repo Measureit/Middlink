@@ -8,21 +8,7 @@ using Middlink.Core.MessageBus;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-//services => UseInMemoryMessageBus().=> IBuClient
-//UseMongoStorage() => IRepository
-//UseCQRS() => Dispatchers && Subscribers
-//UseEventSourcing() => ISession
-//UseMongoEventStore() => IReposiotry<EventDescription>
 
-//var b = new MiddLinkBuilder();
-//app.UseCQRS(o => 
-//o.UseInMemoryMessegeBus();
-//o.UseEventSourcing(r => 
-//    r.MongoEventStore().
-//))
-//.SubscribeCommand<CreateLive>(
-//  onError: (c, e) =>
-//      new RejectedEvent(c.AggregateId, e.Message, e.Code))
 namespace Middlink.MVC.Controllers
 {
     public abstract class BaseController : ControllerBase
@@ -136,10 +122,7 @@ namespace Middlink.MVC.Controllers
                 resource = $"{resource}/{resourceId}";
             }
 
-            //todo:
-            var userId = Guid.Parse("4b6719bd-4139-41ef-906b-8e2ec566661c");
-
-            return Task.FromResult(CorrelationContext.Create<T>(Guid.NewGuid(), userId, resourceId ?? Guid.Empty,
+            return Task.FromResult(CorrelationContext.Create<T>(Guid.NewGuid(), UserId, resourceId ?? Guid.Empty,
                HttpContext.TraceIdentifier, HttpContext.Connection.Id,
                Request.Path.ToString(), Culture, resource));
         }
