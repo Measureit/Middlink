@@ -138,9 +138,7 @@ namespace Middlink.MVC.Controllers
         protected bool IsAdmin
             => User.IsInRole("admin");
 
-        protected Guid UserId
-            => string.IsNullOrWhiteSpace(User?.Identity?.Name) && Guid.TryParse(User.Identity.Name, out Guid userId) ?
-                userId : Guid.Empty;
+        protected string UserId => User?.Identity?.Name;
 
         protected string Culture
             => Request.Headers.ContainsKey(AcceptLanguageHeader) ?

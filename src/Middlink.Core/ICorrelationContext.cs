@@ -5,7 +5,7 @@ namespace Middlink.Core
     public interface ICorrelationContext
     {
         Guid Id { get; }
-        Guid UserId { get; }
+        string UserId { get; }
         Guid ResourceId { get; }
         string TraceId { get; }
         string ConnectionId { get; }

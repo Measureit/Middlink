@@ -7,7 +7,7 @@ namespace Middlink.Core.CQRS.Operations
     public class OperationRejected : IMessage
     {
         public Guid OperationId { get; }
-        public Guid UserId { get; }
+        public string UserId { get; }
         public string Name { get; }
         public string Resource { get; }
         public string Code { get; }
@@ -16,7 +16,7 @@ namespace Middlink.Core.CQRS.Operations
 
         [JsonConstructor]
         public OperationRejected(Guid operationId,
-                  Guid userId, string name, string resource, Guid resourceId,
+                  string userId, string name, string resource, Guid resourceId,
                     string code, string message)
         {
             OperationId = operationId;
