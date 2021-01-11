@@ -19,7 +19,7 @@ namespace Middlink.CQRS.Operations.SignalR.Services.Operations
             return Task.FromResult(result);
         }
 
-        public async Task SetAsync(Guid id, Guid userId, string name, OperationState state, string resource, Guid resourceId, string code = null, string reason = null)
+        public async Task SetAsync(Guid id, string userId, string name, OperationState state, string resource, Guid resourceId, string code = null, string reason = null)
         {
             var newState = state.ToString().ToLowerInvariant();
             var operation = await GetAsync(id);

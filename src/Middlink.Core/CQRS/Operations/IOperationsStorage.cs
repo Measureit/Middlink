@@ -7,7 +7,7 @@ namespace Middlink.Core.CQRS.Operations
     {
         Task<OperationDto> GetAsync(Guid id);
 
-        Task SetAsync(Guid id, Guid userId, string name, OperationState state,
+        Task SetAsync(Guid id, string userId, string name, OperationState state,
             string resource, Guid resourceId, string code = null, string reason = null);
     }
 }
