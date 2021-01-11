@@ -7,7 +7,7 @@ namespace Middlink.Core.CQRS.Operations
     public class OperationPending : IMessage
     {
         public Guid OperationId { get; }
-        public Guid UserId { get; }
+        public string UserId { get; }
         public string Name { get; }
         public string Resource { get; }
 
@@ -15,7 +15,7 @@ namespace Middlink.Core.CQRS.Operations
 
         [JsonConstructor]
         public OperationPending(Guid operationId,
-            Guid userId, string name, string resource, Guid resourceId)
+            string userId, string name, string resource, Guid resourceId)
         {
             OperationId = operationId;
             UserId = userId;

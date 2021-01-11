@@ -7,7 +7,7 @@ namespace Middlink.Core
     public class CorrelationContext : ICorrelationContext
     {
         public Guid Id { get; }
-        public Guid UserId { get; }
+        public string UserId { get; }
         public Guid ResourceId { get; }
         public string TraceId { get; }
         public string ConnectionId { get; }
@@ -28,7 +28,7 @@ namespace Middlink.Core
         }
 
         [JsonConstructor]
-        private CorrelationContext(Guid id, Guid userId, Guid resourceId, string traceId,
+        private CorrelationContext(Guid id, string userId, Guid resourceId, string traceId,
             string connectionId, string executionId, string name, string origin, string culture, string resource, int retries)
         {
             Id = id;
@@ -55,7 +55,7 @@ namespace Middlink.Core
             => Create<T>(context.Id, context.UserId, context.ResourceId, context.TraceId, context.ConnectionId,
                 context.Origin, context.Culture, context.Resource);
 
-        public static ICorrelationContext Create<T>(Guid id, Guid userId, Guid resourceId, string origin,
+        public static ICorrelationContext Create<T>(Guid id, string userId, Guid resourceId, string origin,
             string traceId, string connectionId, string culture, string resource = "")
             => new CorrelationContext(id, userId, resourceId, traceId, connectionId, string.Empty, typeof(T).Name, origin, culture,
                 resource, 0);
