@@ -5,4 +5,8 @@
         string Reason { get; }
         string Code { get; }
     }
+    public interface IRejectedEvent<TKey> : IDomainEvent<TKey>, IRejectedEvent
+    {
+
+    }
 }

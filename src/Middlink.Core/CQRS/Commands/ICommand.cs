@@ -4,6 +4,9 @@ namespace Middlink.Core.CQRS.Commands
 {
     public interface ICommand : IMessage
     {
-        Guid AggregateId { get; }
+    }
+    public interface ICommand<TKey> : ICommand
+    {
+        TKey AggregateId { get; }
     }
 }
