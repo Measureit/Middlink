@@ -4,6 +4,9 @@ namespace Middlink.Core.CQRS.Events
 {
     public interface IDomainEvent : IMessage
     {
-        Guid AggregateId { get; }
+    }
+    public interface IDomainEvent<TKey> : IDomainEvent
+    {
+        TKey AggregateId { get; }
     }
 }

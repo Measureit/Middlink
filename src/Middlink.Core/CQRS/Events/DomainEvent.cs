@@ -2,11 +2,11 @@
 
 namespace Middlink.Core.CQRS.Events
 {
-    public abstract class DomainEvent : IDomainEvent
+    public abstract class DomainEvent<TKey> : IDomainEvent<TKey>
     {
-        public Guid AggregateId { get; }
+        public TKey AggregateId { get; }
 
-        protected DomainEvent(Guid aggregateId)
+        protected DomainEvent(TKey aggregateId)
         {
             AggregateId = aggregateId;
         }
