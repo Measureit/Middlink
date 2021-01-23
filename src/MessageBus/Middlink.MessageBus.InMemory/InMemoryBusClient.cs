@@ -36,10 +36,10 @@ namespace Middlink.MessageBus.InMemory
                       }
                       else
                       {
-                          await subscribeMethod(JsonSerializer.Deserialize<TMessage>(JsonSerializer.Serialize(message.Item1)), message.Item2);
+                          await subscribeMethod(JsonSerializer.Deserialize<TMessage>(JsonSerializer.Serialize(message.Item1, message.Item1.GetType())), message.Item2);
                       }
                   }
-                  catch (Exception ex)
+                  catch (Exception)
                   {
                       //Empty cactch to continue processing
                   }
