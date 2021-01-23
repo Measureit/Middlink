@@ -42,7 +42,7 @@ namespace Middlink.CQRS.MessageBus
                     ICommandDispatcher dispatcher = _appServiceProvider.CreateScope().ServiceProvider.GetService<ICommandDispatcher>();
                     return dispatcher.DispatchAsync(command, correlationContext);
                 }, onError);
-            });
+            }, @namespace);
 
             return this;
         }
@@ -60,7 +60,7 @@ namespace Middlink.CQRS.MessageBus
                     IEventDispatcher dispatcher = _appServiceProvider.CreateScope().ServiceProvider.GetService<IEventDispatcher>();
                     return dispatcher.DispatchAsync(@event, correlationContext);
                 }, onError);
-            });
+            }, @namespace);
 
             return this;
         }

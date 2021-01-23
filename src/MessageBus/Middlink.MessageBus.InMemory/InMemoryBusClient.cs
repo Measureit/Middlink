@@ -3,6 +3,8 @@ using Middlink.Core.MessageBus;
 using System;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Middlink.MessageBus.InMemory
@@ -20,18 +22,24 @@ namespace Middlink.MessageBus.InMemory
             _bus.OnNext((message, context));
             return Task.CompletedTask;
         }
-
-        public Task SubscribeAsync<TMessage>(Func<TMessage, ICorrelationContext, Task> subscribeMethod) where TMessage : IMessage
+        public Task SubscribeAsync<TMessage>(Func<TMessage, ICorrelationContext, Task> subscribeMethod, string @namespace = null) where TMessage : IMessage
         {
             var subscription = _bus
-              .Where(message => message.Item1.GetType().Equals(typeof(TMessage)))
+              .Where(message => message.Item1.GetType().FullName.Equals(@namespace ?? typeof(TMessage).FullName))
               .Subscribe(async message =>
               {
                   try
                   {
-                      await subscribeMethod((TMessage)message.Item1, message.Item2);
+                      if (message.Item1 is TMessage content)
+                      {
+                          await subscribeMethod(content, message.Item2);
+                      }
+                      else
+                      {
+                          await subscribeMethod(JsonSerializer.Deserialize<TMessage>(JsonSerializer.Serialize(message.Item1)), message.Item2);
+                      }
                   }
-                  catch (Exception)
+                  catch (Exception ex)
                   {
                       //Empty cactch to continue processing
                   }
