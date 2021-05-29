@@ -20,6 +20,10 @@ jobs:
       artifact-directory: ./bin
     timeout-minutes: 15
     steps:
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: csharp
     - name: Checkout
       uses: actions/checkout@v2
     - name: Build
@@ -28,9 +32,5 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release --no-build
       working-directory: ${{env.working-directory}}
-    - name: Inspect
-      uses: microsoft/ApplicationInspector-Action@v1
-      uses: actions/upload-artifact@v2
-      with:
-        name: AppInspectorResults
-        path: AppInspectorResults.json
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
