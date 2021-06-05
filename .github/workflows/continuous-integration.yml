@@ -17,14 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       working-directory: ./src
-      artifact-directory: ./bin
-    timeout-minutes: 15
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build -c Release
       working-directory: ${{env.working-directory}}
+      
     - name: Test
-      run: dotnet test --configuration Release --no-build
+      run: dotnet test -c Release --no-build
       working-directory: ${{env.working-directory}}
