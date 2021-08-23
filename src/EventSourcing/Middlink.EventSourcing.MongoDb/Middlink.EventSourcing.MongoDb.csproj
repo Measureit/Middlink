@@ -21,8 +21,8 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MongoDB.Bson" Version="2.11.6" />
-    <PackageReference Include="MongoDB.Driver" Version="2.11.6" />
+    <PackageReference Include="MongoDB.Bson" Version="2.13.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Middlink\Middlink.csproj" />

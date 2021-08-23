@@ -21,7 +21,7 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="Autofac" Version="6.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Middlink.MessageBus.InMemory\Middlink.MessageBus.InMemory.csproj" />
