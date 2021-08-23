@@ -44,7 +44,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.Core", "Middlink.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tst", "tst", "{95BE4CD8-3A8B-4615-A518-F4ECBB8B917D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.MessageBus.InMemory.Tests", "..\tst\Middlink.MessageBus.InMemory.Tests\Middlink.MessageBus.InMemory.Tests.csproj", "{78000D1C-945A-4DD1-8F84-F0965EB89D7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middlink.MessageBus.InMemory.Tests", "..\tst\Middlink.MessageBus.InMemory.Tests\Middlink.MessageBus.InMemory.Tests.csproj", "{78000D1C-945A-4DD1-8F84-F0965EB89D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{E95B42E6-FF0C-4AB5-AAD1-36F93567DD0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middlink.Authentication", "Security\Middlink.Authentication\Middlink.Authentication.csproj", "{76150FCD-655D-4E59-BEEF-5E55BF67AC95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -108,6 +112,10 @@ Global
 		{78000D1C-945A-4DD1-8F84-F0965EB89D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78000D1C-945A-4DD1-8F84-F0965EB89D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78000D1C-945A-4DD1-8F84-F0965EB89D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76150FCD-655D-4E59-BEEF-5E55BF67AC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76150FCD-655D-4E59-BEEF-5E55BF67AC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76150FCD-655D-4E59-BEEF-5E55BF67AC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76150FCD-655D-4E59-BEEF-5E55BF67AC95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +132,7 @@ Global
 		{33AF6791-16E6-4999-BFD1-E20ACF36B797} = {BEAA6619-0C9B-4F7E-8217-82B29EE3B90B}
 		{1EE94FBD-94F4-4B57-AE75-1C1284D4FBB4} = {BDCC43A6-B110-45F4-8397-CEEE6443FDA7}
 		{78000D1C-945A-4DD1-8F84-F0965EB89D7F} = {95BE4CD8-3A8B-4615-A518-F4ECBB8B917D}
+		{76150FCD-655D-4E59-BEEF-5E55BF67AC95} = {E95B42E6-FF0C-4AB5-AAD1-36F93567DD0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1498A3F2-CD29-4FEB-B475-8593392F6B34}
