@@ -70,7 +70,7 @@ namespace Middlink.MVC.Controllers
         protected async Task<IActionResult> SendAsync<T>(T command,
             Guid? resourceId = null, string resource = "") where T : ICommand
         {
-            var context = GetContext<T>(resourceId, resource);
+            var context = GetContext<T>(command, resourceId, resource);
             await _publisher.SendAsync(command, context);
 
             return Accepted(context);
@@ -101,14 +101,27 @@ namespace Middlink.MVC.Controllers
             return base.Accepted();
         }
 
-        protected ICorrelationContext GetContext<T>(Guid? resourceId = null, string resource = "") where T : ICommand
+        protected ICorrelationContext GetContext<T>(T command, Guid? resourceId = null, string resource = "") where T : ICommand
         {
+            var userId = UserId;
             if (!string.IsNullOrWhiteSpace(resource))
             {
                 resource = $"{resource}/{resourceId}";
             }
 
-            return CorrelationContext.Create<T>(Guid.NewGuid(), UserId, resourceId ?? Guid.Empty,
+            if(command is IAnonymousCommand anonymousCommand)
+            {
+                if(anonymousCommand.AnonymousUserId != Guid.Empty)
+                {
+                    userId = anonymousCommand.AnonymousUserId.ToString();
+                }
+                else
+                {
+                    throw new ArgumentException($"The anonymous command must have an identifier set");
+                }
+            }
+
+            return CorrelationContext.Create<T>(Guid.NewGuid(), userId, resourceId ?? Guid.Empty,
                HttpContext.TraceIdentifier, HttpContext.Connection.Id,
                Request.Path.ToString(), Culture, resource);
         }
