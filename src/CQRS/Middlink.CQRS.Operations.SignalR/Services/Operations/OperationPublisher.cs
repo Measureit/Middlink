@@ -18,16 +18,25 @@ namespace Middlink.CQRS.Operations.SignalR.Services.Operations
         }
 
         public Task PendingAsync(ICorrelationContext context)
-            => _hubContext.Clients.Group(context.UserId.ToUserGroup()).operationPending(new OperationPending(context.Id,
-            context.UserId, context.Name, context.Resource, context.ResourceId));
-
+        {
+            var operation = new OperationPending(context.Id, context.UserId, context.Name, context.Resource, context.ResourceId);
+            var destinationGroup = context.SessionId.HasValue ? context.SessionId.Value.ToAnonymousSessionGroup() : context.UserId.ToUserGroup();
+            return _hubContext.Clients.Group(destinationGroup).operationPending(operation);
+        }
 
         public Task CompleteAsync(ICorrelationContext context)
-            => _hubContext.Clients.Group(context.UserId.ToUserGroup()).operationCompleted(new OperationCompleted(context.Id,
-            context.UserId, context.Name, context.Resource, context.ResourceId));
+        {
+            var operation = new OperationCompleted(context.Id,context.UserId, context.Name, context.Resource, context.ResourceId);
+            var destinationGroup = context.SessionId.HasValue ? context.SessionId.Value.ToAnonymousSessionGroup() : context.UserId.ToUserGroup();
+            return _hubContext.Clients.Group(destinationGroup).operationCompleted(operation);
+        }
+
 
         public Task RejectAsync(ICorrelationContext context, string code, string message)
-            => _hubContext.Clients.Group(context.UserId.ToUserGroup()).operationRejected(new OperationRejected(context.Id,
-            context.UserId, context.Name, context.Resource, context.ResourceId, code, message));
+        {
+            var operation = new OperationRejected(context.Id, context.UserId, context.Name, context.Resource, context.ResourceId, code, message);
+            var destinationGroup = context.SessionId.HasValue ? context.SessionId.Value.ToAnonymousSessionGroup() : context.UserId.ToUserGroup();
+            return _hubContext.Clients.Group(destinationGroup).operationRejected(operation);
+        }
     }
 }

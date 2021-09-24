@@ -17,6 +17,7 @@ namespace Middlink.Core
         public string Culture { get; }
         public int Retries { get; set; }
         public DateTime CreatedAt { get; }
+        public Guid? SessionId { get;}
 
         public CorrelationContext()
         {
@@ -29,7 +30,7 @@ namespace Middlink.Core
 
         [JsonConstructor]
         private CorrelationContext(Guid id, string userId, Guid resourceId, string traceId,
-            string connectionId, string executionId, string name, string origin, string culture, string resource, int retries)
+            string connectionId, string executionId, string name, string origin, string culture, string resource, int retries, Guid? sessionId = null)
         {
             Id = id;
             UserId = userId;
@@ -42,6 +43,7 @@ namespace Middlink.Core
             Culture = culture;
             Resource = resource;
             Retries = retries;
+            SessionId = sessionId;
             CreatedAt = DateTime.UtcNow;
         }
 
@@ -53,12 +55,12 @@ namespace Middlink.Core
 
         public static ICorrelationContext From<T>(ICorrelationContext context)
             => Create<T>(context.Id, context.UserId, context.ResourceId, context.TraceId, context.ConnectionId,
-                context.Origin, context.Culture, context.Resource);
+                context.Origin, context.Culture, context.Resource, context.SessionId);
 
         public static ICorrelationContext Create<T>(Guid id, string userId, Guid resourceId, string origin,
-            string traceId, string connectionId, string culture, string resource = "")
+            string traceId, string connectionId, string culture, string resource = "", Guid? sessionId = null)
             => new CorrelationContext(id, userId, resourceId, traceId, connectionId, string.Empty, typeof(T).Name, origin, culture,
-                resource, 0);
+                resource, 0, sessionId);
 
         private static string GetName(string name) => name.Underscore().ToLowerInvariant();
     }
