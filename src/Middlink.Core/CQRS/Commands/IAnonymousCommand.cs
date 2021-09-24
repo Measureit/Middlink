@@ -4,7 +4,7 @@ namespace Middlink.Core.CQRS.Commands
 {
     public interface IAnonymousCommand : ICommand
     {
-        Guid AnonymousUserId { get; set; }
+        Guid SessionId { get; set; }
     }
 
     public interface IAnonymousCommand<TKey> : ICommand<TKey>, IAnonymousCommand

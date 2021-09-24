@@ -15,5 +15,6 @@ namespace Middlink.Core
         string Culture { get; }
         DateTime CreatedAt { get; }
         int Retries { get; set; }
+        Guid? SessionId { get; }
     }
 }

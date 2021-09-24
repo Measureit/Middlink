@@ -103,7 +103,7 @@ namespace Middlink.MVC.Controllers
 
         protected ICorrelationContext GetContext<T>(T command, Guid? resourceId = null, string resource = "") where T : ICommand
         {
-            var userId = UserId;
+            Guid? sessionId = null;
             if (!string.IsNullOrWhiteSpace(resource))
             {
                 resource = $"{resource}/{resourceId}";
@@ -111,9 +111,9 @@ namespace Middlink.MVC.Controllers
 
             if(command is IAnonymousCommand anonymousCommand)
             {
-                if(anonymousCommand.AnonymousUserId != Guid.Empty)
+                if(anonymousCommand.SessionId != Guid.Empty)
                 {
-                    userId = anonymousCommand.AnonymousUserId.ToString();
+                    sessionId = anonymousCommand.SessionId;
                 }
                 else
                 {
@@ -121,9 +121,9 @@ namespace Middlink.MVC.Controllers
                 }
             }
 
-            return CorrelationContext.Create<T>(Guid.NewGuid(), userId, resourceId ?? Guid.Empty,
+            return CorrelationContext.Create<T>(Guid.NewGuid(), UserId, resourceId ?? Guid.Empty,
                HttpContext.TraceIdentifier, HttpContext.Connection.Id,
-               Request.Path.ToString(), Culture, resource);
+               Request.Path.ToString(), Culture, resource, sessionId);
         }
 
         protected Task<ICorrelationContext> GetContextAsync<T>(Guid? resourceId = null, string resource = "") where T : IMessage
