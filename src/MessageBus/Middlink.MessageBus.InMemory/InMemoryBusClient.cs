@@ -6,7 +6,6 @@ using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Middlink.MessageBus.InMemory
@@ -27,11 +26,11 @@ namespace Middlink.MessageBus.InMemory
         public Task<IDisposable> SubscribeAsync<TMessage>(Func<TMessage, ICorrelationContext, Task> subscribeMethod, string @namespace = null) where TMessage : IMessage
         {
             var subscription = _bus
-              .ObserveOn(Scheduler.Default)
-              .Where(message => message.Item1.GetType().FullName.Equals(@namespace ?? typeof(TMessage).FullName))
-                   .Select(x => Observable.FromAsync(async () => await Execute<TMessage>(x, subscribeMethod)))
-                    .Concat()
-                    .Subscribe();
+                .ObserveOn(Scheduler.Default)
+                .Where(message => message.Item1.GetType().FullName.Equals(@namespace ?? typeof(TMessage).FullName))
+                .Select(x => Observable.FromAsync(async () => await Execute<TMessage>(x, subscribeMethod)))
+                .Concat()
+                .Subscribe();
             return Task.FromResult(subscription);
         }
 

@@ -2,7 +2,6 @@
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-
 namespace Middlink.EventSourcing.MongoDb
 {
     public class EventDocument

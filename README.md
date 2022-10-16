@@ -1,39 +1,33 @@
-## Welcome to GitHub Pages
+# Middlink
 
-You can use the [editor on GitHub](https://github.com/Measureit/Middlink/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![npm version](https://badge.fury.io/js/@measureit%2Fbongox.svg)](https://www.npmjs.org/package/@measureit/bongox)
+[![install size](https://packagephobia.now.sh/badge?p=@measureit%2Fbongox)](https://packagephobia.now.sh/result?p=@measureit/bongox)
+[![npm downloads](https://img.shields.io/npm/dm/@measureit%2Fbongox.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@measureit/bongox)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Table of Contents
 
-### Markdown
+1. [Quick introduction](#id-quick-introduction)
+2. [Packages](#id-packages)
+3. [Features](#id-features)
+4. [Deployment](#id-deployment)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<div id='id-quick-introduction'/>
 
-```markdown
-Syntax highlighted code block
+## 1. Quick introduction
 
-# Header 1
-## Header 2
-### Header 3
+`Middlink` is a framework to create distributed systems from scratch. The authors planned a set of implementation to help explore of the business domain in iterative way along with minimizing the downside of distributed system. 
 
-- Bulleted
-- List
+<div id='id-packages'/>
 
-1. Numbered
-2. List
+## 2. Packages
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+<div id='id-features'/>
 
-Now Middlink supports .net 6.
+## 3. Features
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<div id='id-deployment'/>
 
-### Jekyll Themes
+## 4. Deployment
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Measureit/Middlink/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<div id='id-deployment'/>
