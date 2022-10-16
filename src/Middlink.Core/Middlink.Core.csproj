@@ -3,7 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.Core</PackageId>
-    <Version>1.1.3.2</Version>
+    <Version>2.0.0.0</Version>
     <Authors>Jarosław Kurdzieko</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -11,7 +11,7 @@
     <Product>Middlink</Product>
     <Description>Middlewares interface library.</Description>
     <PackageTags>Middlink</PackageTags>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
     <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
@@ -21,6 +21,6 @@
     <OutputPath>..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    <PackageReference Include="System.Text.Json" Version="6.0.6" />
   </ItemGroup>
 </Project>

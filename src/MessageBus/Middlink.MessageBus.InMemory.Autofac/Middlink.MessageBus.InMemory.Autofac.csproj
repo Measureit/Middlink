@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Middlink.MessageBus.InMemory.Autofac</PackageId>
-    <Version>1.1.3.2</Version>
+    <Version>2.0.0.0</Version>
     <Authors>Measureit</Authors>
     <Owners>Measureit</Owners>
     <ProjectUrl>http://measureit.pl</ProjectUrl>
@@ -11,7 +11,7 @@
     <Product>Middlink.MessageBus.InMemory.Autofac</Product>
     <Description>Middlink in memory message bus.</Description>
     <PackageTags>Middlink</PackageTags>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
     <PackageReleaseNotes>Release notes:</PackageReleaseNotes>
@@ -21,7 +21,7 @@
     <OutputPath>..\..\..\bin\AnyCPU\$(Configuration)</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Autofac" Version="6.4.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Middlink.MessageBus.InMemory\Middlink.MessageBus.InMemory.csproj" />
