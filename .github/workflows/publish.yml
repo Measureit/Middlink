@@ -39,7 +39,7 @@ jobs:
       run: dotnet nuget push **/*.nupkg
         --api-key ${{ secrets.NUGET_DEPLOY_KEY }}
         --source ${{ secrets.NUGET_URL }}
-        --no-symbols true
+        --no-symbols
 
     - uses: actions/upload-artifact@v1
       with:
